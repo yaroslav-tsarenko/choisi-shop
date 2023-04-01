@@ -68,6 +68,7 @@ CREATE TABLE IF NOT EXISTS app_file(
   file_data varchar(255) NOT NULL
 );
 
+
 -- PRODUCT FILES
 CREATE TABLE IF NOT EXISTS product_file(
     id SERIAL NOT NULL PRIMARY KEY,
