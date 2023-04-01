@@ -9,8 +9,6 @@ CREATE TABLE IF NOT EXISTS app_user(
     user_enabled boolean NOT NULL
 );
 
-DROP TABLE app_user;
-
 -- CONTACTS
 CREATE TABlE IF NOT EXISTS contact(
   id SERIAL NOT NULL PRIMARY KEY,
@@ -28,7 +26,6 @@ CREATE TABLE IF NOT EXISTS  user_order(
     FOREIGN KEY (id) REFERENCES app_user (id)
 );
 
-DROP TABLE user_order;
 
 -- ORDERS
 CREATE TABLE IF NOT EXISTS app_order(
