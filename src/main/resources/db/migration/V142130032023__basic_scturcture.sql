@@ -12,18 +12,21 @@ CREATE TABLE IF NOT EXISTS app_user(
 -- CONTACTS
 CREATE TABlE IF NOT EXISTS contact(
   id SERIAL NOT NULL PRIMARY KEY,
+  user_id int8,
   first_name varchar(255) NOT NULL,
   last_name varchar(255) NOT NULL,
   email varchar(255) NOT NULL,
   phone varchar(255) NOT NULL,
-  FOREIGN KEY (id) REFERENCES app_user (id)
+  FOREIGN KEY (user_id) REFERENCES app_user (id)
 );
 
 -- USER ORDERS
 CREATE TABLE IF NOT EXISTS  user_order(
     id SERIAL NOT NULL PRIMARY KEY,
-    FOREIGN KEY (id) REFERENCES app_order (id),
-    FOREIGN KEY (id) REFERENCES app_user (id)
+    order_id int8,
+    user_id int8,
+    FOREIGN KEY (order_id) REFERENCES app_order (id),
+    FOREIGN KEY (user_id) REFERENCES app_user (id)
 );
 
 
@@ -50,8 +53,10 @@ CREATE TABLE IF NOT EXISTS  app_product(
 -- ORDERED PRODUCTS
 CREATE TABLE IF NOT EXISTS ordered_product(
     id SERIAL NOT NULL PRIMARY KEY,
-    FOREIGN KEY (id) REFERENCES app_order (id),
-    FOREIGN KEY (id) REFERENCES app_product (id)
+    order_id int8,
+    product_id int8,
+    FOREIGN KEY (order_id) REFERENCES app_order (id),
+    FOREIGN KEY (product_id) REFERENCES app_product (id)
 );
 
 -- FILE
@@ -66,8 +71,10 @@ CREATE TABLE IF NOT EXISTS app_file(
 -- PRODUCT FILES
 CREATE TABLE IF NOT EXISTS product_file(
     id SERIAL NOT NULL PRIMARY KEY,
-    FOREIGN KEY (id) REFERENCES app_product (id),
-    FOREIGN KEY (id) REFERENCES app_file (id)
+    product_id int8,
+    file_id int8,
+    FOREIGN KEY (product_id) REFERENCES app_product (id),
+    FOREIGN KEY (file_id) REFERENCES app_file (id)
 );
 
 
