@@ -11,8 +11,8 @@ public class UserDto {
     private String name;
     private String password;
     private String role;
-    private String isExpired;
-    private String isLocked;
-    private String isEnabled;
+    private boolean isAccountNonLocked;
+    private boolean isCredentialsNonExpired;
+    private boolean isEnabled;
 
 }
