@@ -16,7 +16,7 @@ const TodoList = () => {
       setInputValue('');
     }
   };
-
+//
   const handleDeleteTodo = (index) => {
     const newTodos = [...todos];
     newTodos.splice(index, 1);
