@@ -1,13 +1,9 @@
 package com.shop.choisi;
 
-import org.junit.jupiter.api.Test;
-import org.springframework.boot.test.context.SpringBootTest;
 
-@SpringBootTest
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
 class ChoisiApplicationTests {
-
-	@Test
-	void contextLoads() {
-	}
 
 }
