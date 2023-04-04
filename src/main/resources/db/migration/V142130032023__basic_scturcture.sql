@@ -23,6 +23,17 @@ CREATE TABlE IF NOT EXISTS contact
     PRIMARY KEY (id)
 );
 
+-- ORDERS
+CREATE TABLE IF NOT EXISTS app_order
+(
+    id            SERIAL8,
+    creation_date date    NOT NULL,
+    comment       varchar(255),
+    is_approved   boolean NOT NULL,
+    is_canceled   boolean NOT NULL,
+    PRIMARY KEY (id)
+);
+
 -- USER ORDERS
 CREATE TABLE IF NOT EXISTS user_order
 (
@@ -34,16 +45,7 @@ CREATE TABLE IF NOT EXISTS user_order
     PRIMARY KEY (id)
 );
 
--- ORDERS
-CREATE TABLE IF NOT EXISTS app_order
-(
-    id            SERIAL8,
-    creation_date date    NOT NULL,
-    comment       varchar(255),
-    is_approved   boolean NOT NULL,
-    is_canceled   boolean NOT NULL,
-    PRIMARY KEY (id)
-);
+
 
 -- PRODUCTS
 CREATE TABLE IF NOT EXISTS app_product
