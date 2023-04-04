@@ -6,11 +6,12 @@ import lombok.Setter;
 @Getter
 @Setter
 public class OrderDto {
+
     private Long id;
     private String creationDate;
     private String comment;
-    private String isApproved;
-    private String isCanceled;
+    private boolean isApproved;
+    private boolean isCanceled;
 
 
 }

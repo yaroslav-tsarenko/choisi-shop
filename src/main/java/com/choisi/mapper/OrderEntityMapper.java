@@ -1,7 +1,8 @@
 package com.choisi.mapper;
 
-import com.shop.choisi.dto.OrderDto;
-import com.shop.choisi.entity.OrderEntity;
+
+import com.choisi.dto.OrderDto;
+import com.choisi.entity.OrderEntity;
 import org.springframework.stereotype.Component;
 
 @Component

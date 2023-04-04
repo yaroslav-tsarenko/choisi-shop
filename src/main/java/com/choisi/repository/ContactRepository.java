@@ -1,4 +1,8 @@
 package com.choisi.repository;
 
-public interface ContactRepository{
+import com.choisi.entity.ContactEntity;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface ContactRepository extends JpaRepository<ContactEntity, Long> {
+    ContactEntity findContactById(Long id);
 }
