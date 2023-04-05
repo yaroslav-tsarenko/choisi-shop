@@ -2,10 +2,7 @@ package com.choisi.service;
 
 
 import com.choisi.dto.ProductDto;
-import com.choisi.dto.UserDto;
 import com.choisi.entity.ProductEntity;
-import com.choisi.entity.UserEntity;
-import com.choisi.mapper.UserEntityMapper;
 import com.choisi.repository.ProductRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.BeanUtils;
