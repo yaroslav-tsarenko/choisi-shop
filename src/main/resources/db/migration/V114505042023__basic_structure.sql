@@ -83,7 +83,6 @@ CREATE TABLE IF NOT EXISTS app_file
     PRIMARY KEY (id)
     );
 
-
 -- PRODUCT FILES
 CREATE TABLE IF NOT EXISTS product_files
 (
