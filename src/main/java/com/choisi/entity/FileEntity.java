@@ -21,9 +21,9 @@ public class FileEntity {
     private String extension;
 
     @Column(name = "creation_date")
-    private String creationDate;
+    private Long creationDate;
 
-    @Column(name = "file_data", columnDefinition = "BYTEA")
-    private String fileData;
+    @Column(name = "data", columnDefinition = "BYTEA")
+    private String data;
 
 }
