@@ -8,7 +8,7 @@ CREATE TABLE IF NOT EXISTS app_user
     is_credentials_non_expired boolean      NOT NULL,
     is_enabled                 boolean      NOT NULL,
     PRIMARY KEY (id)
-    );
+);
 
 -- CONTACTS
 CREATE TABlE IF NOT EXISTS contact
@@ -21,7 +21,7 @@ CREATE TABlE IF NOT EXISTS contact
     phone      varchar(255) NOT NULL,
     FOREIGN KEY (user_id) REFERENCES app_user (id),
     PRIMARY KEY (id)
-    );
+);
 
 -- ORDERS
 CREATE TABLE IF NOT EXISTS app_order
@@ -32,7 +32,7 @@ CREATE TABLE IF NOT EXISTS app_order
     is_approved   boolean NOT NULL,
     is_canceled   boolean NOT NULL,
     PRIMARY KEY (id)
-    );
+);
 
 -- USER ORDERS
 CREATE TABLE IF NOT EXISTS user_order
@@ -43,8 +43,7 @@ CREATE TABLE IF NOT EXISTS user_order
     FOREIGN KEY (order_id) REFERENCES app_order (id),
     FOREIGN KEY (user_id) REFERENCES app_user (id),
     PRIMARY KEY (id)
-    );
-
+);
 
 
 -- PRODUCTS
@@ -54,11 +53,11 @@ CREATE TABLE IF NOT EXISTS app_product
     creation_date date         NOT NULL,
     name          varchar(255) NOT NULL,
     amount        bigint       NOT NULL,
-    price         bigint       NOT NULL,
+    price         decimal       NOT NULL,
     discount      varchar(255) NOT NULL,
     description   varchar(255),
     PRIMARY KEY (id)
-    );
+);
 
 
 -- ORDERED PRODUCTS
@@ -70,18 +69,19 @@ CREATE TABLE IF NOT EXISTS ordered_products
     FOREIGN KEY (order_id) REFERENCES app_order (id),
     FOREIGN KEY (product_id) REFERENCES app_product (id),
     PRIMARY KEY (id)
-    );
+);
 
 -- FILE
 CREATE TABLE IF NOT EXISTS app_file
 (
-    id             SERIAL8,
-    file_name      varchar(255) NOT NULL,
-    file_extension varchar(255) NOT NULL,
-    creation_date  date         NOT NULL,
-    file_data      bytea        NOT NULL,
+    id            SERIAL8,
+    name          varchar(255) NOT NULL,
+    extension     varchar(255) NOT NULL,
+    creation_date int8         NOT NULL,
+    data          bytea        NOT NULL,
     PRIMARY KEY (id)
-    );
+);
+
 
 -- PRODUCT FILES
 CREATE TABLE IF NOT EXISTS product_files
@@ -92,7 +92,7 @@ CREATE TABLE IF NOT EXISTS product_files
     FOREIGN KEY (product_id) REFERENCES app_product (id),
     FOREIGN KEY (file_id) REFERENCES app_file (id),
     PRIMARY KEY (id)
-    );
+);
 
 
 
