@@ -5,6 +5,8 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.math.BigDecimal;
+
 @Getter
 @Setter
 @Entity
@@ -25,8 +27,8 @@ public class ProductEntity {
     @Column(name = "amount", columnDefinition = "BIGINT")
     private Long amount;
 
-    @Column(name = "price", columnDefinition = "VARCHAR(255)")
-    private String price;
+    @Column(name = "price")
+    private BigDecimal price;
 
     @Column(name = "discount", columnDefinition = "VARCHAR(255)")
     private String discount;
