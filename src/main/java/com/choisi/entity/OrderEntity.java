@@ -15,16 +15,16 @@ public class OrderEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "creation_date", columnDefinition = "DATE")
+    @Column(name = "creation_date")
     private String creationDate;
 
-    @Column(name = "comment", columnDefinition = "VARCHAR(255)")
+    @Column(name = "comment")
     private String comment;
 
-    @Column(name = "is_approved", columnDefinition = "BOOLEAN")
+    @Column(name = "is_approved")
     private String isApproved;
 
-    @Column(name = "is_canceled", columnDefinition = "BOOLEAN")
+    @Column(name = "is_canceled")
     private String isCanceled;
 
 

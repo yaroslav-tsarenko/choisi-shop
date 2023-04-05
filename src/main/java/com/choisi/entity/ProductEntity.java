@@ -18,13 +18,13 @@ public class ProductEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "creation_date", columnDefinition = "DATE")
+    @Column(name = "creation_date")
     private String creationDate;
 
-    @Column(name = "name", columnDefinition = "VARCHAR(255)")
+    @Column(name = "name")
     private String name;
 
-    @Column(name = "amount", columnDefinition = "BIGINT")
+    @Column(name = "amount")
     private Long amount;
 
     @Column(name = "price")

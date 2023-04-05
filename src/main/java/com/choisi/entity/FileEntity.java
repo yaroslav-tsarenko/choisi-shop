@@ -12,16 +12,15 @@ public class FileEntity {
 
     @Id
     @Column(name = "id")
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "file_name", columnDefinition = "VARCHAR(255)")
-    private String fileName;
+    @Column(name = "name")
+    private String name;
 
-    @Column(name = "file_extension", columnDefinition = "VARCHAR(255)")
-    private String fileExtension;
+    @Column(name = "extension")
+    private String extension;
 
-    @Column(name = "creation_date", columnDefinition = "DATE")
+    @Column(name = "creation_date")
     private String creationDate;
 
     @Column(name = "file_data", columnDefinition = "BYTEA")
