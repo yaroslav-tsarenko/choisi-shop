@@ -3,11 +3,8 @@
 const e = React.createElement;
 
 const ProductList = () => {
-    const [todos, setTodos] = React.useState([]);
-    const [inputName, setInputName] = React.useState('');
-    const [inputDescription, setDescription] = React.useState('');
-    const [inputPrice, setInputPrice] = React.useState('');
 
+    const [inputName, inputDescription, inputPrice, setInputName, setDescription, setInputPrice] = React.useState([]);
 
     const handleInputName = (event) => {
         setInputName(event.target.value);
@@ -19,19 +16,23 @@ const ProductList = () => {
         setInputPrice(event.target.value);
     };
 
-    const handleAddTodo = () => {
+    const handleAddProduct = () => {
         if (inputName.trim() && inputDescription.trim() && inputPrice.trim()) {
-            setTodos([...todos, {name: inputName.trim(), description: inputDescription.trim(), price: inputPrice.trim()}]);
+            setProducts([...products, {
+                name: inputName.trim(),
+                description: inputDescription.trim(),
+                price: inputPrice.trim()
+            }]);
             setInputName('');
             setDescription('');
             setInputPrice('');
         }
     };
 
-    const handleDeleteTodo = (index) => {
-        const newTodos = [...todos];
-        newTodos.splice(index, 1);
-        setTodos(newTodos);
+    const handleDeleteProduct = (index) => {
+        const newProduct = [...products];
+        newProduct.splice(index, 1);
+        setProducts(newProduct);
     };
 
     return (
@@ -41,15 +42,12 @@ const ProductList = () => {
                 <h3>Name of your Product</h3>
                 <input
                     type="text"
-                    name={"search"}
                     value={inputName}
                     onChange={handleInputName}
                 />
                 <h3>Product description</h3>
                 <input
                     type="text"
-                    name={"search"}
-                    id={"search-field"}
                     value={inputDescription}
                     onChange={handleInputDescription}
                 />
@@ -59,15 +57,15 @@ const ProductList = () => {
                     value={inputPrice}
                     onChange={handleInputPrice}
                 />
-                <button onClick={handleAddTodo}>Add Product</button>
+                <button onClick={handleAddProduct}>Add Product</button>
             </div>
             <ul>
-                {todos.map((item, index) => (
+                {products.map((name, description, price, index) => (
                     <li key={index}>
-                        <div>Name: {item.name}</div>
-                        <div>Description: {item.description}</div>
-                        <div>Price: {item.price}</div>
-                        <button onClick={() => handleDeleteTodo(index)}>Delete</button>
+                        <div>Name: {name.name}</div>
+                        <div>Description: {description.description}</div>
+                        <div>Price: {price.price}</div>
+                        <button onClick={() => handleDeleteProduct(index)}>Delete</button>
                     </li>
                 ))}
             </ul>
