@@ -8,8 +8,8 @@ import lombok.Setter;
 public class FileDto {
 
     private Long id;
-    private String fileName;
-    private String fileExtension;
+    private String name;
+    private String extension;
     private String creationDate;
     private String data;
 }

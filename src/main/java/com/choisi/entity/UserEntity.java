@@ -17,21 +17,21 @@ public class UserEntity extends UserDto {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "name", columnDefinition = "VARCHAR(55)")
+    @Column(name = "name")
     private String name;
 
-    @Column(name = "password", columnDefinition = "VARCHAR(255)")
+    @Column(name = "password")
     private String password;
 
-    @Column(name = "role", columnDefinition = "VARCHAR(10)")
+    @Column(name = "role")
     private String role;
 
-    @Column(name = "is_account_non_locked", columnDefinition = "BOOLEAN")
+    @Column(name = "is_account_non_locked")
     private boolean isAccountNonLocked;
 
-    @Column(name = "is_credentials_non_expired", columnDefinition = "BOOLEAN")
+    @Column(name = "is_credentials_non_expired")
     private boolean isCredentialsNonExpired;
 
-    @Column(name = "is_enabled", columnDefinition = "BOOLEAN")
+    @Column(name = "is_enabled")
     private boolean isEnabled;
 }

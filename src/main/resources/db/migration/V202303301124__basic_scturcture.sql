@@ -27,7 +27,7 @@ CREATE TABlE IF NOT EXISTS contact
 CREATE TABLE IF NOT EXISTS app_order
 (
     id            SERIAL8,
-    creation_date date    NOT NULL,
+    creation_date int8    NOT NULL,
     comment       varchar(255),
     is_approved   boolean NOT NULL,
     is_canceled   boolean NOT NULL,
@@ -46,15 +46,14 @@ CREATE TABLE IF NOT EXISTS user_order
 );
 
 
-
 -- PRODUCTS
 CREATE TABLE IF NOT EXISTS app_product
 (
     id            SERIAL8,
-    creation_date date         NOT NULL,
+    creation_date int8         NOT NULL,
     name          varchar(255) NOT NULL,
-    amount        bigint       NOT NULL,
-    price         varchar(255) NOT NULL,
+    amount        int8       NOT NULL,
+    price         decimal       NOT NULL,
     discount      varchar(255) NOT NULL,
     description   varchar(255),
     PRIMARY KEY (id)
@@ -75,11 +74,11 @@ CREATE TABLE IF NOT EXISTS ordered_products
 -- FILE
 CREATE TABLE IF NOT EXISTS app_file
 (
-    id             SERIAL8,
-    file_name      varchar(255) NOT NULL,
-    file_extension varchar(255) NOT NULL,
-    creation_date  date         NOT NULL,
-    file_data      bytea        NOT NULL,
+    id            SERIAL8,
+    name          varchar(255) NOT NULL,
+    extension     varchar(255) NOT NULL,
+    creation_date int8         NOT NULL,
+    data          bytea        NOT NULL,
     PRIMARY KEY (id)
 );
 

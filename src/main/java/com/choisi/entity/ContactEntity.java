@@ -1,6 +1,7 @@
 package com.choisi.entity;
 
 
+
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
@@ -18,16 +19,16 @@ public class ContactEntity {
     @JoinColumn(name = "user_id")
     private UserEntity userId;
 
-    @Column(name = "first_name", columnDefinition = "VARCHAR(255)")
+    @Column(name = "first_name")
     private String firstName;
 
-    @Column(name = "last_name", columnDefinition = "VARCHAR(255)")
+    @Column(name = "last_name")
     private String lastName;
 
-    @Column(name = "email", columnDefinition = "VARCHAR(255)")
+    @Column(name = "email")
     private String email;
 
-    @Column(name = "phone", columnDefinition = "VARCHAR(255)")
+    @Column(name = "phone")
     private String phone;
 
 
