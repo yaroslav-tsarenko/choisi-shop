@@ -1,4 +1,4 @@
-package com.choisi.dto;
+package com.shop.choisi.dto;
 
 import lombok.Getter;
 import lombok.Setter;

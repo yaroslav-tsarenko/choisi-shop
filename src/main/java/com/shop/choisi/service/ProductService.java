@@ -1,9 +1,9 @@
-package com.choisi.service;
+package com.shop.choisi.service;
 
 
-import com.choisi.dto.ProductDto;
-import com.choisi.entity.ProductEntity;
-import com.choisi.repository.ProductRepository;
+import com.shop.choisi.dto.ProductDto;
+import com.shop.choisi.entity.ProductEntity;
+import com.shop.choisi.repository.ProductRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Service;

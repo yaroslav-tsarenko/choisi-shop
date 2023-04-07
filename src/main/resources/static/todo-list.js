@@ -1,71 +1,89 @@
 'use strict';
-
-const e = React.createElement;
-
+const {createElement: e} = React;
+const productApi = axios.create({
+    baseURL: 'http://localhost:8080'
+});
 const ProductList = () => {
 
-    const [inputName, inputDescription, inputPrice, setInputName, setDescription, setInputPrice] = React.useState([]);
+    let product = {
+        id: null,
+        name: null,
+        description: null
+    }
 
-    const handleInputName = (event) => {
-        setInputName(event.target.value);
-    };
-    const handleInputDescription = (event) => {
-        setDescription(event.target.value);
-    };
-    const handleInputPrice = (event) => {
-        setInputPrice(event.target.value);
+
+    const [products, setProducts] = React.useState([]);
+    const [inputName, setName] = React.useState("");
+    const [inputDescription, setDescription] = React.useState("");
+
+    React.useEffect(() => {
+        productApi.get('/products')
+            .then(function (response) {
+                setProducts(response.data);
+            })
+    }, []);
+
+    const handleProductNameInput = (event) => {
+        let name = event.target.value;
+        setName(name);
     };
 
-    const handleAddProduct = () => {
-        if (inputName.trim() && inputDescription.trim() && inputPrice.trim()) {
-            setProducts([...products, {
-                name: inputName.trim(),
-                description: inputDescription.trim(),
-                price: inputPrice.trim()
-            }]);
-            setInputName('');
-            setDescription('');
-            setInputPrice('');
+    const handleProductDescriptionInput = (event) => {
+        let desc = event.target.value;
+        setDescription(desc);
+    };
+
+    const handleAddTodo = () => {
+        if (inputName === "" || inputDescription === "") {
+            window.alert("Input all fields")
+        } else {
+            product.id = new Date().getTime();
+            product.name = inputName;
+            product.description = inputDescription;
+            setName("");
+            setDescription("");
+            productApi.post('/products', product)
+                .then(function (response) {
+                    console.log(response);
+                    setProducts([...products, product]);
+                })
+                .catch(function (error) {
+                    console.log(error);
+                });
         }
     };
 
-    const handleDeleteProduct = (index) => {
-        const newProduct = [...products];
-        newProduct.splice(index, 1);
-        setProducts(newProduct);
+    const handleDeleteTodo = (index) => {
+        const newTodos = [...products];
+        newTodos.splice(index, 1);
+        setProducts(newTodos);
     };
 
     return (
         <div>
-            <h1>Sell your product</h1>
+            <h1>Product List</h1>
             <div>
-                <h3>Name of your Product</h3>
                 <input
                     type="text"
                     value={inputName}
-                    onChange={handleInputName}
+                    onChange={(event) => handleProductNameInput(event)}
                 />
-                <h3>Product description</h3>
                 <input
                     type="text"
                     value={inputDescription}
-                    onChange={handleInputDescription}
+                    onChange={(event) => handleProductDescriptionInput(event)}
                 />
-                <h3>Product price</h3>
-                <input
-                    type="number"
-                    value={inputPrice}
-                    onChange={handleInputPrice}
-                />
-                <button onClick={handleAddProduct}>Add Product</button>
+                <button onClick={handleAddTodo}>Add</button>
             </div>
             <ul>
-                {products.map((name, description, price, index) => (
+                {products.map((product, index) => (
                     <li key={index}>
-                        <div>Name: {name.name}</div>
-                        <div>Description: {description.description}</div>
-                        <div>Price: {price.price}</div>
-                        <button onClick={() => handleDeleteProduct(index)}>Delete</button>
+                        <div className={"product"}>
+                            <div>{product.id}</div>
+                            <div>{product.name}</div>
+                            <div>{product.description}</div>
+                        </div>
+                        <button onClick={() => handleDeleteTodo(index)}>Delete</button>
                     </li>
                 ))}
             </ul>

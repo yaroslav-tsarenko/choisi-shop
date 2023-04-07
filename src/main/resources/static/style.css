@@ -1,55 +1,60 @@
 .container {
-  max-width: 600px;
-  margin: 0 auto;
-  padding: 20px;
-  font-family: Arial, sans-serif;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: Arial, sans-serif;
 }
 
 form {
-  display: flex;
-  margin-bottom: 20px;
+    display: flex;
+    margin-bottom: 20px;
 }
 
 input[type="text"] {
-  flex: 1;
-  margin-right: 10px;
-  padding: 5px;
-  font-size: 16px;
+    flex: 1;
+    margin-right: 10px;
+    padding: 5px;
+    font-size: 16px;
 }
 
 button[type="submit"] {
-  padding: 5px 10px;
-  background-color: #007bff;
-  border: none;
-  color: #fff;
-  font-size: 16px;
-  cursor: pointer;
+    padding: 5px 10px;
+    background-color: #007bff;
+    border: none;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
 }
 
 ul {
-  list-style: none;
-  padding: 0;
+    list-style: none;
+    padding: 0;
 }
 
 li {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: #f2f2f2;
-  margin-bottom: 10px;
-  padding: 10px;
-  font-size: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f2f2f2;
+    margin-bottom: 10px;
+    padding: 10px;
+    font-size: 16px;
 }
 
 li span {
-  flex: 1;
+    flex: 1;
 }
 
 li button {
-  padding: 5px 10px;
-  background-color: #dc3545;
-  border: none;
-  color: #fff;
-  font-size: 16px;
-  cursor: pointer;
+    padding: 5px 10px;
+    background-color: #dc3545;
+    border: none;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.product {
+    position: relative;
+    display: inline-grid;
 }

@@ -1,7 +1,7 @@
-package com.choisi.entity;
+package com.shop.choisi.entity;
 
 
-import com.choisi.dto.UserDto;
+import com.shop.choisi.dto.UserDto;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
