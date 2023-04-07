@@ -1,4 +1,4 @@
-package com.choisi.dto;
+package com.shop.choisi.dto;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -8,10 +8,10 @@ import lombok.Setter;
 public class OrderDto {
 
     private Long id;
-    private String creationDate;
+    private Long creationDate;
     private String comment;
-    private boolean isApproved;
-    private boolean isCanceled;
+    private Boolean isApproved;
+    private Boolean isCanceled;
 
 
 }

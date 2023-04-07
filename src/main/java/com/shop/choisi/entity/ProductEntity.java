@@ -1,4 +1,4 @@
-package com.choisi.entity;
+package com.shop.choisi.entity;
 
 
 import jakarta.persistence.*;
@@ -19,7 +19,7 @@ public class ProductEntity {
     private Long id;
 
     @Column(name = "creation_date")
-    private String creationDate;
+    private Long creationDate;
 
     @Column(name = "name")
     private String name;

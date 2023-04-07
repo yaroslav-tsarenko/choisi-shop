@@ -1,4 +1,4 @@
-package com.choisi.entity;
+package com.shop.choisi.entity;
 
 import jakarta.persistence.*;
 import lombok.Getter;
@@ -16,16 +16,16 @@ public class OrderEntity {
     private Long id;
 
     @Column(name = "creation_date")
-    private String creationDate;
+    private Long creationDate;
 
     @Column(name = "comment")
     private String comment;
 
     @Column(name = "is_approved")
-    private String isApproved;
+    private Boolean isApproved;
 
     @Column(name = "is_canceled")
-    private String isCanceled;
+    private Boolean isCanceled;
 
 
 

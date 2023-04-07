@@ -1,4 +1,4 @@
-package com.choisi.entity;
+package com.shop.choisi.entity;
 
 
 import jakarta.persistence.*;
