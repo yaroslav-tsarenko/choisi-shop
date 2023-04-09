@@ -1,16 +1,169 @@
-.container {
-    max-width: 600px;
-    margin: 0 auto;
-    padding: 20px;
-    font-family: Arial, sans-serif;
+:root {
+    --primary-black: #1C1C1C;
+    --main-color: #EDEDED;
 }
 
-form {
+* {
+    font-family: 'Forum', sans-serif;
+    box-sizing: border-box;
+    margin: auto;
+    padding: 0;
+}
+
+body {
+    font-family: 'Forum', sans-serif;
+    font-weight: 500;
+    background-color: var(--main-color);
+}
+
+li {
+    font-weight: 500;
+    font-size: 16px;
+    color: var(--primary-black);
+    text-decoration: none;
+}
+
+header {
     display: flex;
-    margin-bottom: 20px;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 30px 0;
 }
 
-input[type="text"] {
+.logo {
+    cursor: pointer;
+    margin-right: auto;
+}
+
+.nav-links {
+    list-style: none;
+}
+
+.nav-links li {
+    display: inline-block;
+    padding: 0 20px;
+}
+
+.nav-links a {
+    font-size: 38px;
+    text-decoration: none;
+    color: var(--primary-black);
+    font-weight: 500;
+}
+
+.nav-links-main{
+    text-align: center;
+    margin-top: 120px;
+    list-style: none;
+}
+
+.nav-links-main li{
+    display: inline-block;
+    padding: 0 20px;
+}
+
+.nav-links-main a{
+    font-size: 38px;
+    text-decoration: none;
+    color: var(--primary-black);
+    font-weight: 500;
+}
+
+.nav-links li {
+    transition: all 0.3s ease 0s;
+}
+
+
+.input-box {
+    position: relative;
+    height: 76px;
+    max-width: 600px;
+    width: 100%;
+    margin: 0 0 0 300px;
+    border-radius: 35px;
+}
+
+.input-box i,
+.input-box .button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.input-box i {
+    left: 20px;
+    font-size: 40px;
+}
+
+.input-box input {
+    height: 100%;
+    width: 90%;
+    outline: none;
+    font-size: 35px;
+    font-weight: 400;
+    border-color: var(--primary-black);
+    border-width: 3px;
+    border-radius: 35px;
+    padding: 0 155px 0 65px;
+    border-style: solid;
+    background-color: transparent;
+}
+
+.input-box .button {
+    background-color: transparent;
+    height: 30px;
+    width: 30px;
+    right: 80px;
+    font-size: 20px;
+    font-weight: 400;
+    border: none;
+    padding: 25px 40px;
+    border-radius: 100px;
+    cursor: pointer;
+
+}
+
+.input-box .button:hover {
+
+}
+
+
+.input::placeholder {
+    font-weight: 700;
+}
+/* Horizontal line */
+hr{
+    border-color: var(--primary-black);
+    border-width: 2px;
+    border-style: solid;
+    height: 1px;
+}
+
+/* Responsive */
+
+@media screen and (max-width: 500px) {
+    .input-box {
+        height: 66px;
+        margin: 0 8px;
+    }
+
+    .input-box i {
+        left: 12px;
+        font-size: 25px;
+    }
+
+    .input-box input {
+        padding: 0 112px 0 50px;
+    }
+
+    .input-box .button {
+        right: 12px;
+        font-size: 14px;
+        padding: 8px 18px;
+    }
+}
+
+/*input[type="text"] {
     flex: 1;
     margin-right: 10px;
     padding: 5px;
@@ -19,30 +172,11 @@ input[type="text"] {
 
 button[type="submit"] {
     padding: 5px 10px;
-    background-color: #007bff;
+    background-color: transparent;
     border: none;
     color: #fff;
     font-size: 16px;
     cursor: pointer;
-}
-
-ul {
-    list-style: none;
-    padding: 0;
-}
-
-li {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #f2f2f2;
-    margin-bottom: 10px;
-    padding: 10px;
-    font-size: 16px;
-}
-
-li span {
-    flex: 1;
 }
 
 li button {
@@ -58,3 +192,11 @@ li button {
     position: relative;
     display: inline-grid;
 }
+
+i {
+    color: var(--primary-black);
+    cursor: pointer;
+}*/
+
+
+
