@@ -1,19 +1,57 @@
 <!DOCTYPE html>
-<html lang="uk">
-  <head>
-    <meta charset="UTF-8" />
+<html lang="en">
+<head>
     <title>Add your product</title>
     <script src="https://unpkg.com/react@17.0.2/umd/react.development.js"></script>
     <script src="https://unpkg.com/react-dom@17.0.2/umd/react-dom.development.js"></script>
     <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-    <link href="style.css" rel="stylesheet" type="text/css" />
-  </head>
-  <body>
-  <header></header>
-  <main></main>
-  <footer></footer>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Forum&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+          integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+          crossorigin="anonymous" referrerpolicy="no-referrer"/>
+    <link href="style.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<header>
+    <img class="logo" src="./images/logo1.svg" alt="CHOISI">
+    <div class="input-box">
+       <!-- <i class="uil uil-search"></i>-->
+        <label>
+            <input type="text" placeholder="Search..." />
+        </label>
+        <button class="button"><i class="uil uil-search"></i></button>
+    </div>
+    <nav>
+        <ul class="nav-links">
+            <li><a href="#">LOG IN<i class="uil uil-user"></i></a></li>
+            <li><a href="#">WISHLIST<i class="uil uil-heart"></i></a></li>
+            <li><a href="#">CART<i class="uil uil-shopping-bag"></i></a></li>
+        </ul>
+    </nav>
+</header>
+<hr class="header-underline">
+<main>
+    <nav>
+        <ul class="nav-links-main">
+            <li><a href="#">SHOP</a></li>
+            <li><a href="#">ABOUT US</a></li>
+            <li><a href="#">SALE</a></li>
+        </ul>
+    </nav>
+
+
+</main>
+<footer>
+
+</footer>
+<!--<div>
     <div id="root">This is where the todo list will appear</div>
     <script src="todo-list.js" type="text/babel"></script>
-  </body>
+</div>-->
+
+</body>
 </html>
