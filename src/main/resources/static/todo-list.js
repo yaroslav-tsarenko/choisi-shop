@@ -60,10 +60,11 @@ const ProductList = () => {
     };
 
     return (
-        <div>
+        <div className={}>
             <h1>Product List</h1>
             <div>
                 <input
+                    className={"product-input"}
                     type="text"
                     value={inputName}
                     onChange={(event) => handleProductNameInput(event)}
