@@ -1,4 +1,6 @@
 'use strict';
+import './style.css'
+
 const {createElement: e} = React;
 const productApi = axios.create({
     baseURL: 'http://localhost:8080'
@@ -52,19 +54,16 @@ const ProductList = () => {
                 });
         }
     };
-
     const handleDeleteTodo = (index) => {
         const newTodos = [...products];
         newTodos.splice(index, 1);
         setProducts(newTodos);
     };
-
     return (
-        <div className={}>
+        <div>
             <h1>Product List</h1>
             <div>
                 <input
-                    className={"product-input"}
                     type="text"
                     value={inputName}
                     onChange={(event) => handleProductNameInput(event)}
