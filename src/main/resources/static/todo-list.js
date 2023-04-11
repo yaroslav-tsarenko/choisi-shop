@@ -1,4 +1,6 @@
 'use strict';
+import './style.css'
+
 const {createElement: e} = React;
 const productApi = axios.create({
     baseURL: 'http://localhost:8080'
@@ -52,13 +54,11 @@ const ProductList = () => {
                 });
         }
     };
-
     const handleDeleteTodo = (index) => {
         const newTodos = [...products];
         newTodos.splice(index, 1);
         setProducts(newTodos);
     };
-
     return (
         <div>
             <h1>Product List</h1>
