@@ -1,6 +1,6 @@
 'use strict';
 import './style.css'
-
+import './Box.css';
 const {createElement: e} = React;
 const productApi = axios.create({
     baseURL: 'http://localhost:8080'
@@ -17,6 +17,14 @@ const ProductList = () => {
     const [products, setProducts] = React.useState([]);
     const [inputName, setName] = React.useState("");
     const [inputDescription, setDescription] = React.useState("");
+
+    const Box = () => (
+        <div className="Box">
+            <p className="Box_content"> Styling React Components </p>
+        </div>
+    );
+
+    export default Box;
 
     React.useEffect(() => {
         productApi.get('/products')
@@ -87,6 +95,7 @@ const ProductList = () => {
                     </li>
                 ))}
             </ul>
+
         </div>
     );
 };
