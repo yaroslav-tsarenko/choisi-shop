@@ -18,14 +18,6 @@ const ProductList = () => {
     const [inputName, setName] = React.useState("");
     const [inputDescription, setDescription] = React.useState("");
 
-    const Box = () => (
-        <div className="Box">
-            <p className="Box_content"> Styling React Components </p>
-        </div>
-    );
-
-    export default Box;
-
     React.useEffect(() => {
         productApi.get('/products')
             .then(function (response) {
