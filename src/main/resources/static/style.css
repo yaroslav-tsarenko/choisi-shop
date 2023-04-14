@@ -1,6 +1,10 @@
 :root {
+    --primary-white: #FFFFFF;
     --primary-black: #1C1C1C;
+    --black-light: rgb(56, 56, 56);
     --main-color: #EDEDED;
+    --border-color: #3F3F3F;
+    --hover-color: #000000
 }
 
 * {
@@ -51,18 +55,18 @@ header {
     font-weight: 500;
 }
 
-.nav-links-main{
+.nav-links-main {
     text-align: center;
     margin-top: 120px;
     list-style: none;
 }
 
-.nav-links-main li{
+.nav-links-main li {
     display: inline-block;
     padding: 0 20px;
 }
 
-.nav-links-main a{
+.nav-links-main a {
     font-size: 38px;
     text-decoration: none;
     color: var(--primary-black);
@@ -131,8 +135,9 @@ header {
 .input::placeholder {
     font-weight: 700;
 }
+
 /* Horizontal line */
-hr{
+hr {
     border-color: var(--primary-black);
     border-width: 2px;
     border-style: solid;
@@ -163,13 +168,129 @@ hr{
     }
 }
 
-.product-list-container{
+
+/* PRODUCT PLACEMENT */
+.product-list-container {
     margin-left: auto;
     max-width: 500px;
     left: 500px;
 }
 
-/*input[type="text"] {
+
+.product-placement-title{
+    font-weight: 500;
+    margin-bottom: 41px;
+}
+.input-product {
+    background-color: transparent;
+    margin-bottom: 20px;
+    color: #000000;
+    font-size: 40px;
+    border-radius: 10px;
+    border: 1px solid var(--border-color);
+}
+
+.input-product::placeholder {
+    font-size: 25px;
+    padding-left: 13px;
+}
+
+.input-price-product {
+    width: 170px;
+    background-color: transparent;
+    margin-bottom: 20px;
+    color: #000000;
+    font-size: 40px;
+    border-radius: 10px;
+    border: 1px solid var(--border-color);
+}
+
+.input-price-product::placeholder{
+    font-size: 25px;
+    padding-left: 13px;
+}
+
+.product-list-container{
+    margin-top: 60px;
+    padding: 50px;
+    position: fixed;
+    left: 0;
+}
+.button-select-currency {
+    position: relative;
+    bottom: 5px;
+    margin-left: 10px;
+    margin-bottom: 10px;
+    width: 200px;
+    height: 50px;
+    background-color: var(--primary-black);
+    font-size: 19px;
+    font-weight: 500;
+    border-radius: 15px;
+    color: var(--primary-white);
+    border-style: none;
+    transition: 0.2s ease-out;
+    cursor: pointer;
+}
+
+.button-select-currency:hover{
+    background-color: var(--hover-color);
+    transition: 0.2s ease-out;
+    cursor: pointer;
+}
+
+.adding-product-button {
+    width: 200px;
+    height: 50px;
+    background-color: var(--primary-black);
+    font-size: 30px;
+    font-weight: 500;
+    border-radius: 15px;
+    color: var(--primary-white);
+    border-style: none;
+    transition: 0.2s ease-out;
+    cursor: pointer;
+}
+
+.adding-product-button:hover{
+    background-color: var(--hover-color);
+    transition: 0.2s ease-out;
+}
+
+.upload-product-photo{
+    margin-bottom: 20px;
+    color: var(--primary-black);
+    position: relative;
+    display: inline-block;
+    width: 255px;
+    height: 255px;
+    background-color: transparent;
+    border: 1px solid #3F3F3F;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: 0.2s ease-out;
+}
+
+.upload-product-photo:hover{
+    color: var(--primary-white);
+    position: inherit;
+    width: 255px;
+    height: 255px;
+    background-color: var(--hover-color);
+    border: 1px solid white;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: 0.2s ease-out;
+}
+
+
+
+/*
+
+*/
+
+/*
+input[type="text"] {
     flex: 1;
     margin-right: 10px;
     padding: 5px;
@@ -202,7 +323,8 @@ li button {
 i {
     color: var(--primary-black);
     cursor: pointer;
-}*/
+}
+*/
 
 
 
