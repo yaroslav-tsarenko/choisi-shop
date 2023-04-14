@@ -1,25 +1,21 @@
 'use strict';
-import './style.css'
-import './Box.css';
 const {createElement: e} = React;
-const productApi = axios.create({
-    baseURL: 'http://localhost:8080'
-});
+
+let product = {
+    id: null,
+    name: null,
+    description: null,
+    price: null
+}
+
 const ProductList = () => {
-
-    let product = {
-        id: null,
-        name: null,
-        description: null
-    }
-
-
     const [products, setProducts] = React.useState([]);
     const [inputName, setName] = React.useState("");
     const [inputDescription, setDescription] = React.useState("");
+    const [inputPrice, setPrice] = React.useState("");
 
     React.useEffect(() => {
-        productApi.get('/products')
+        restApi.get('/products')
             .then(function (response) {
                 setProducts(response.data);
             })
@@ -35,6 +31,11 @@ const ProductList = () => {
         setDescription(desc);
     };
 
+    const handleProductPriceInput = (event) => {
+        let price = event.target.value;
+        setPrice(price);
+    };
+
     const handleAddTodo = () => {
         if (inputName === "" || inputDescription === "") {
             window.alert("Input all fields")
@@ -42,9 +43,11 @@ const ProductList = () => {
             product.id = new Date().getTime();
             product.name = inputName;
             product.description = inputDescription;
+            product.price = inputPrice;
             setName("");
             setDescription("");
-            productApi.post('/products', product)
+            setPrice("");
+            restApi.post('/products', product)
                 .then(function (response) {
                     console.log(response);
                     setProducts([...products, product]);
@@ -59,21 +62,41 @@ const ProductList = () => {
         newTodos.splice(index, 1);
         setProducts(newTodos);
     };
+    const selectCurrency = (event) => {
+    };
+
+
     return (
-        <div>
-            <h1>Product List</h1>
+        <div className={"product-additional-container"}>
+            <h1 className={"product-placement-title"}>PRODUCT PLACEMENT</h1>
+            <button className={"upload-product-photo"}>
+                <h2 className={"upload-photo-title"}>
+                    <i className="uil uil-plus-circle"></i>
+                    UPLOAD PHOTO
+                </h2>
+            </button>
             <div>
-                <input
-                    type="text"
-                    value={inputName}
-                    onChange={(event) => handleProductNameInput(event)}
+                <input className={"input-product"}
+                       type="text"
+                       value={inputName}
+                       placeholder={"Name"}
+                       onChange={(event) => handleProductNameInput(event)}
                 />
-                <input
-                    type="text"
-                    value={inputDescription}
-                    onChange={(event) => handleProductDescriptionInput(event)}
+                <input className={"input-product"}
+                       type="text"
+                       value={inputDescription}
+                       placeholder={"Description"}
+                       onChange={(event) => handleProductDescriptionInput(event)}
                 />
-                <button onClick={handleAddTodo}>Add</button>
+                <input className={"input-price-product"}
+                       type="number"
+                       value={inputPrice}
+                       placeholder={"Price"}
+                       onChange={(event) => handleProductPriceInput(event)}
+                />
+
+                <button className={"adding-product-button"} onClick={handleAddTodo}>ADD</button>
+
             </div>
             <ul>
                 {products.map((product, index) => (
@@ -82,6 +105,7 @@ const ProductList = () => {
                             <div>{product.id}</div>
                             <div>{product.name}</div>
                             <div>{product.description}</div>
+                            <div>{product.price}</div>
                         </div>
                         <button onClick={() => handleDeleteTodo(index)}>Delete</button>
                     </li>
