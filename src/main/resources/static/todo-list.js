@@ -1,5 +1,6 @@
 'use strict';
 const {createElement: e} = React;
+import 'style.css';
 
 let product = {
     id: null,
@@ -67,7 +68,7 @@ const ProductList = () => {
 
 
     return (
-        <div className={"product-additional-container"}>
+        <div className="product-additional-container">
             <h1 className={"product-placement-title"}>PRODUCT PLACEMENT</h1>
             <button className={"upload-product-photo"}>
                 <h2 className={"upload-photo-title"}>
@@ -98,19 +99,19 @@ const ProductList = () => {
                 <button className={"adding-product-button"} onClick={handleAddTodo}>ADD</button>
 
             </div>
-            <ul>
-                {products.map((product, index) => (
-                    <li key={index}>
-                        <div className={"product"}>
-                            <div>{product.id}</div>
-                            <div>{product.name}</div>
-                            <div>{product.description}</div>
-                            <div>{product.price}</div>
-                        </div>
-                        <button onClick={() => handleDeleteTodo(index)}>Delete</button>
-                    </li>
-                ))}
-            </ul>
+            {/*<ul>*/}
+            {/*    {products.map((product, index) => (*/}
+            {/*        <li key={index}>*/}
+            {/*            <div className={"product"}>*/}
+            {/*                <div>{product.id}</div>*/}
+            {/*                <div>{product.name}</div>*/}
+            {/*                <div>{product.description}</div>*/}
+            {/*                <div>{product.price}</div>*/}
+            {/*            </div>*/}
+            {/*            <button onClick={() => handleDeleteTodo(index)}>Delete</button>*/}
+            {/*        </li>*/}
+            {/*    ))}*/}
+            {/*</ul>*/}
 
         </div>
     );
