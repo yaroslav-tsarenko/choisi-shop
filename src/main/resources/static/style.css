@@ -4,7 +4,12 @@
     --black-light: rgb(56, 56, 56);
     --main-color: #EDEDED;
     --border-color: #3F3F3F;
-    --hover-color: #000000
+    --hover-color: #000000;
+    --hover-dark-white: #a8a8a8
+}
+
+.root {
+    position: relative;
 }
 
 * {
@@ -18,6 +23,14 @@ body {
     font-family: 'Forum', sans-serif;
     font-weight: 500;
     background-color: var(--main-color);
+
+}
+
+main {
+    width: 90vw;
+    padding: 30px 20px;
+    margin: 0 auto;
+    min-height: calc(100vh - 141px - 291px)
 }
 
 li {
@@ -131,12 +144,12 @@ header {
 
 }
 
-
 .input::placeholder {
     font-weight: 700;
 }
 
 /* Horizontal line */
+
 hr {
     border-color: var(--primary-black);
     border-width: 2px;
@@ -170,17 +183,23 @@ hr {
 
 
 /* PRODUCT PLACEMENT */
+
 .product-list-container {
+    position: relative;
+    top: auto;
+    bottom: 0;
+    right: 0;
+    left: auto;
     margin-left: auto;
     max-width: 500px;
-    left: 500px;
 }
 
 
-.product-placement-title{
+.product-placement-title {
     font-weight: 500;
     margin-bottom: 41px;
 }
+
 .input-product {
     background-color: transparent;
     margin-bottom: 20px;
@@ -205,17 +224,18 @@ hr {
     border: 1px solid var(--border-color);
 }
 
-.input-price-product::placeholder{
+.input-price-product::placeholder {
     font-size: 25px;
     padding-left: 13px;
 }
 
-.product-list-container{
+.product-list-container {
     margin-top: 60px;
     padding: 50px;
     position: fixed;
     left: 0;
 }
+
 .button-select-currency {
     position: relative;
     bottom: 5px;
@@ -233,7 +253,7 @@ hr {
     cursor: pointer;
 }
 
-.button-select-currency:hover{
+.button-select-currency:hover {
     background-color: var(--hover-color);
     transition: 0.2s ease-out;
     cursor: pointer;
@@ -252,12 +272,12 @@ hr {
     cursor: pointer;
 }
 
-.adding-product-button:hover{
+.adding-product-button:hover {
     background-color: var(--hover-color);
     transition: 0.2s ease-out;
 }
 
-.upload-product-photo{
+.upload-product-photo {
     margin-bottom: 20px;
     color: var(--primary-black);
     position: relative;
@@ -271,7 +291,7 @@ hr {
     transition: 0.2s ease-out;
 }
 
-.upload-product-photo:hover{
+.upload-product-photo:hover {
     color: var(--primary-white);
     position: inherit;
     width: 255px;
@@ -284,47 +304,86 @@ hr {
 }
 
 
+/* FOOTER */
 
-/*
 
-*/
-
-/*
-input[type="text"] {
-    flex: 1;
-    margin-right: 10px;
-    padding: 5px;
-    font-size: 16px;
-}
-
-button[type="submit"] {
-    padding: 5px 10px;
-    background-color: transparent;
-    border: none;
-    color: #fff;
-    font-size: 16px;
-    cursor: pointer;
-}
-
-li button {
-    padding: 5px 10px;
-    background-color: #dc3545;
-    border: none;
-    color: #fff;
-    font-size: 16px;
-    cursor: pointer;
-}
-
-.product {
+.footer {
     position: relative;
-    display: inline-grid;
+    bottom: inherit;
+    border-radius: 15px;
+    background-color: var(--primary-black);
+    padding: 70px 0;
+    display: flex;
+    margin: auto 15px 15px 15px;
 }
 
-i {
-    color: var(--primary-black);
+.footer-container {
+    max-width: 1170px;
+    margin: auto;
+}
+
+.footer-col {
+    width: 25%;
+    padding: 0 15px;
+}
+
+.footer-col h4 {
+    font-size: 18px;
+    color: var(--primary-white);
+    text-transform: capitalize;
+    margin-bottom: 30px;
+    position: relative;
+    font-weight: 400;
+}
+
+.footer-col h4::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+}
+
+.footer-col ul li:not(:last-child) {
+    margin-bottom: 10px;
+}
+
+.footer-col ul li a {
     cursor: pointer;
+    font-size: 16px;
+    text-transform: capitalize;
+    color: var(--primary-white);
+    text-decoration: none;
+    display: block;
+    transition: all 0.3s ease;
 }
-*/
 
+.footer-col ul li a:hover {
+    color: var(--hover-dark-white);
+    padding-left: 8px;
+}
+
+.footer-list {
+    list-style: none;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/* RESPONSIVE FOR FOOTER */
+
+@media (max-width: 767px) {
+    .footer-col {
+        width: 50%;
+        margin-bottom: 30px;
+    }
+}
+
+@media (max-width: 574px) {
+    .footer-col {
+        width: 100%;
+    }
+}
 
 
