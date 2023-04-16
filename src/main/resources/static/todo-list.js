@@ -1,6 +1,5 @@
 'use strict';
 const {createElement: e} = React;
-import 'style.css';
 
 let product = {
     id: null,
@@ -68,15 +67,18 @@ const ProductList = () => {
 
 
     return (
-        <div className="product-additional-container">
+        <div className="product-manager">
             <h1 className={"product-placement-title"}>PRODUCT PLACEMENT</h1>
-            <button className={"upload-product-photo"}>
-                <h2 className={"upload-photo-title"}>
-                    <i className="uil uil-plus-circle"></i>
-                    UPLOAD PHOTO
-                </h2>
-            </button>
-            <div>
+            <div className={"div-button"}>
+                <button className={"upload-product-photo"}>
+                    <h2 className={"upload-photo-title"}>
+                        <i className="uil uil-plus-circle"></i>
+                        UPLOAD PHOTO
+                    </h2>
+                </button>
+            </div>
+
+            <div className={"refactor-fields"}>
                 <input className={"input-product"}
                        type="text"
                        value={inputName}
