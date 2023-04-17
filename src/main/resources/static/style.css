@@ -5,7 +5,8 @@
     --main-color: #EDEDED;
     --border-color: #3F3F3F;
     --hover-color: #000000;
-    --hover-dark-white: #a8a8a8
+    --hover-dark-white: #a8a8a8;
+    --scrollbar-color: #818181;
 }
 
 .root {
@@ -24,6 +25,21 @@ body {
     font-weight: 500;
     background-color: var(--main-color);
 
+}
+
+body::-webkit-scrollbar {
+    width: 5px;
+}
+
+body::-webkit-scrollbar-track {
+    border-radius: 20px;
+    background-color: var(--scrollbar-color);
+}
+
+body::-webkit-scrollbar-thumb {
+    border-radius: 30px;
+    background-color: var(--primary-black);
+    outline: 1px solid slategrey;
 }
 
 main {
@@ -184,17 +200,88 @@ hr {
 
 /* PRODUCT PLACEMENT */
 
+.product-list {
+    position: relative;
+    background-color: red;
+    width: 700px;
+    height: 500px;
+    margin-left: 30px;
+}
+
+.list-title-container {
+    text-align: center;
+}
+
+.hrivnya-icon {
+    text-align: center;
+    position: relative;
+    width: 30px;
+    height: 30px;
+}
+
+i {
+    margin-left: 15px;
+    font-size: 30px;
+}
+
+.delete-button{
+    cursor: pointer;
+    border-style: none;
+    background-color: transparent;
+    position: relative;
+    text-align: center;
+    width: 1px;
+    height: 1px;
+}
+.uil uil-trash-alt{
+    right: 10px;
+    position: relative;
+    text-align: center;
+}
+ul {
+    list-style: none;
+}
+
+button{
+    text-align: center;
+}
+
+button i{
+    display: inline-block
+}
+
+li {
+    text-decoration: none;
+    list-style: none;
+}
+
 .product-manager {
     margin: 50px 0 50px;
     position: relative;
-    display: inline-block;
-    max-width: 500px;
+    display: flex;
+    max-width: 1700px;
 }
 
-.refactor-fields{
+.root-container {
+    position: relative;
+    display: flex;
+}
+
+.div-button {
+    position: relative;
+    width: 255px;
+    display: inline-block;
+}
+
+.refactor-fields {
+    margin-top: 150px;
+    margin-left: 30px;
+    width: 500px;
     float: right;
 }
+
 .product-placement-title {
+    width: 500px;
     font-weight: 500;
     margin-bottom: 41px;
 }
@@ -260,8 +347,8 @@ hr {
 
 .adding-product-button {
     margin: 1px 0 10px 10px;
-    width: 200px;
-    height: 50px;
+    width: 270px;
+    height: 70px;
     background-color: var(--primary-black);
     font-size: 30px;
     font-weight: 500;
@@ -270,6 +357,10 @@ hr {
     border-style: none;
     transition: 0.2s ease-out;
     cursor: pointer;
+}
+
+.button-container {
+    text-align: center;
 }
 
 .adding-product-button:hover {
@@ -296,7 +387,7 @@ hr {
     position: inherit;
     width: 255px;
     height: 255px;
-    background-color: var(--hover-color);
+    background-color: var(--primary-black);
     border: 1px solid white;
     border-radius: 20px;
     cursor: pointer;
