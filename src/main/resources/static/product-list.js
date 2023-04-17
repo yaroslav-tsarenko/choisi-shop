@@ -68,14 +68,15 @@ const ProductList = () => {
 
     return (
         <div className="product-manager">
-            <h1 className={"product-placement-title"}>PRODUCT PLACEMENT</h1>
             <div className={"div-button"}>
+                <h1 className={"product-placement-title"}>PRODUCT PLACEMENT</h1>
                 <button className={"upload-product-photo"}>
                     <h2 className={"upload-photo-title"}>
                         <i className="uil uil-plus-circle"></i>
                         UPLOAD PHOTO
                     </h2>
                 </button>
+
             </div>
 
             <div className={"refactor-fields"}>
@@ -96,26 +97,38 @@ const ProductList = () => {
                        value={inputPrice}
                        placeholder={"Price"}
                        onChange={(event) => handleProductPriceInput(event)}
-                />
 
-                <button className={"adding-product-button"} onClick={handleAddTodo}>ADD</button>
+                />
+                <i className="fas fa-hryvnia"></i>
+                <div className={"button-container"}>
+                    <button className={"adding-product-button"} onClick={handleAddTodo}>ADD</button>
+                </div>
 
             </div>
-            {/*<ul>*/}
-            {/*    {products.map((product, index) => (*/}
-            {/*        <li key={index}>*/}
-            {/*            <div className={"product"}>*/}
-            {/*                <div>{product.id}</div>*/}
-            {/*                <div>{product.name}</div>*/}
-            {/*                <div>{product.description}</div>*/}
-            {/*                <div>{product.price}</div>*/}
-            {/*            </div>*/}
-            {/*            <button onClick={() => handleDeleteTodo(index)}>Delete</button>*/}
-            {/*        </li>*/}
-            {/*    ))}*/}
-            {/*</ul>*/}
+            <div className={"product-list"}>
+                <div className={"list-title-container"}>
+                    <h2>YOUR ACTIVE ORDERS</h2>
+                </div>
+
+                <ul>
+                    {products.map((product, index) => (
+                        <li key={index}>
+                            <div className={"product"}>
+                                <div>{product.id}</div>
+                                <div>{product.name}</div>
+                                <div>{product.description}</div>
+                                <div>{product.price}</div>
+                            </div>
+                            <button className={"delete-button"} onClick={() => handleDeleteTodo(index)}><i className="uil uil-trash-alt"></i>
+                            </button>
+                        </li>
+                    ))}
+                </ul>
+            </div>
+
 
         </div>
+
     );
 };
 
