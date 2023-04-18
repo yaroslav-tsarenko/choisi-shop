@@ -56,18 +56,33 @@ const ProductList = () => {
                     console.log(error);
                 });
         }
+        console.log(products);
     };
-    const handleDeleteTodo = (index) => {
+
+    const handleDeleteTodo = (index, id) => {
+        restApi.delete('/products/' + id);
+        console.log("delete action")
+
+        // setProducts(products.slice(0,index));
         const newTodos = [...products];
         newTodos.splice(index, 1);
         setProducts(newTodos);
     };
+
+    const handleEditList = (index, id) => {
+        const newTodos = [...products];
+        newTodos.splice(index, 1);
+        setProducts(newTodos);
+    };
+
     const selectCurrency = (event) => {
     };
 
 
     return (
+
         <div className="product-manager">
+
             <div className={"div-button"}>
                 <h1 className={"product-placement-title"}>PRODUCT PLACEMENT</h1>
                 <button className={"upload-product-photo"}>
@@ -76,7 +91,6 @@ const ProductList = () => {
                         UPLOAD PHOTO
                     </h2>
                 </button>
-
             </div>
 
             <div className={"refactor-fields"}>
@@ -103,34 +117,63 @@ const ProductList = () => {
                 <div className={"button-container"}>
                     <button className={"adding-product-button"} onClick={handleAddTodo}>ADD</button>
                 </div>
-
             </div>
+
             <div className={"product-list"}>
                 <div className={"list-title-container"}>
                     <h2>YOUR ACTIVE ORDERS</h2>
                 </div>
-
-                <ul>
+                <div className={"added-product-container"}>
                     {products.map((product, index) => (
-                        <li key={index}>
-                            <div className={"product"}>
-                                <div>{product.id}</div>
-                                <div>{product.name}</div>
-                                <div>{product.description}</div>
-                                <div>{product.price}</div>
-                            </div>
-                            <button className={"delete-button"} onClick={() => handleDeleteTodo(index)}><i className="uil uil-trash-alt"></i>
-                            </button>
-                        </li>
+                        <ProductItem
+                            key={index}
+                            index={index}
+                            product={product}
+                            deleteFunc={handleDeleteTodo}
+                        />
                     ))}
-                </ul>
+                </div>
             </div>
-
-
         </div>
 
     );
 };
+
+const ProductItem = (props) => {
+
+    function handleEditList(index, id) {
+
+    }
+
+    function handleDeleteTodo(index, id) {
+        props.deleteFunc(index, id);
+    }
+
+    return (
+
+        <div key={props.index} className={"product-additional-list"}>
+            <div className={"titles-products"}>
+                <hr/>
+                <div className={"product-name-title"}>Name</div>
+                <div className={"product-name-title"}>Name</div>
+                <div className={"product-name-title"}>Name</div>
+            </div>
+            <div>{props.product.name}</div>
+            {/*<div>{props.product.description}</div>*/}
+            <div>{props.product.price}</div>
+            <div>{props.product.id}</div>
+            <div className={"refactor-buttons"}>
+                <button className={"delete-button"} onClick={() => handleDeleteTodo(props.index, props.product.id)}><i
+                    className="uil uil-trash-alt"></i>
+
+                </button>
+                <button className={"edit-button"} onClick={() => handleEditList(props.index, props.product.id)}><i
+                    className="uil uil-edit"></i>
+                </button>
+            </div>
+        </div>
+    );
+}
 
 const domContainer = document.querySelector('#root');
 ReactDOM.render(e(ProductList), domContainer);
