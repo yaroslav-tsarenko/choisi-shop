@@ -202,7 +202,6 @@ hr {
 
 .product-list {
     position: relative;
-    background-color: red;
     width: 700px;
     height: 500px;
     margin-left: 30px;
@@ -223,8 +222,13 @@ i {
     margin-left: 15px;
     font-size: 30px;
 }
-
-.delete-button{
+.refactor-buttons{
+    height: 60px;
+    width: 60px;
+    display: flex;
+    align-items: flex-end;
+}
+.delete-button {
     cursor: pointer;
     border-style: none;
     background-color: transparent;
@@ -233,20 +237,46 @@ i {
     width: 1px;
     height: 1px;
 }
-.uil uil-trash-alt{
-    right: 10px;
+
+.edit-button {
+    cursor: pointer;
+    border-style: none;
+    background-color: transparent;
     position: relative;
     text-align: center;
+    width: 1px;
+    height: 1px;
 }
+
+.added-product-list {
+    list-style: none;
+    padding: 0 20px;
+}
+
+.product-additional-list {
+
+    display: flex;
+}
+
+.product-additional-list li{
+    display: inline-block;
+}
+
+.product-point {
+    display: inline-block;
+}
+
 ul {
     list-style: none;
 }
 
-button{
+button {
+    background-color: transparent;
+    position: relative;
     text-align: center;
 }
 
-button i{
+button i {
     display: inline-block
 }
 
