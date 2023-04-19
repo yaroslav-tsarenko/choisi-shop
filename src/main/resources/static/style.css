@@ -7,6 +7,7 @@
     --hover-color: #000000;
     --hover-dark-white: #a8a8a8;
     --scrollbar-color: #818181;
+    --horizontal-line-color: #797979;
 }
 
 .root {
@@ -28,6 +29,7 @@ body {
 }
 
 body::-webkit-scrollbar {
+    margin-right: 30px;
     width: 5px;
 }
 
@@ -222,12 +224,13 @@ i {
     margin-left: 15px;
     font-size: 30px;
 }
-.refactor-buttons{
+
+.refactor-buttons {
     height: 60px;
     width: 60px;
-    display: flex;
     align-items: flex-end;
 }
+
 .delete-button {
     cursor: pointer;
     border-style: none;
@@ -248,18 +251,100 @@ i {
     height: 1px;
 }
 
+.props-added-photo-button-container{
+    width: 102px;
+    height: 102px;
+    border-radius: 9px;
+    margin-right: 20px;
+    margin-top: 30px;
+
+}
+.delete-button-container{
+
+}
+.edit-button-container{
+
+}
+
 .added-product-list {
     list-style: none;
     padding: 0 20px;
 }
 
 .product-additional-list {
-
+    width: 500px;
     display: flex;
 }
 
-.product-additional-list li{
+.products-titles {
+    align-items: center;
+    width: 100%;
+    max-width: 500px;
+    height: 50px;
+    border-bottom: 2px solid var(--horizontal-line-color);
+
+}
+
+.list-title-container {
+
+}
+
+.product-name-title {
     display: inline-block;
+    position: relative;
+    left: 0;
+    bottom: 0;
+    width: 210px;
+    height: 50px;
+}
+
+
+.product-price-title {
+    display: inline-block;
+    position: relative;
+    bottom: 0;
+    width: 210px;
+}
+
+h2 {
+    font-weight: 400;
+}
+
+h4 {
+    color: var(--horizontal-line-color);
+    margin-top: 30px;
+    right: 0;
+    bottom: 0;
+    position: relative;
+    font-weight: 600;
+}
+
+.product-id-title {
+    display: inline-block;
+    position: relative;
+    right: 0;
+    bottom: 0;
+    width: 50px;
+}
+
+.product-additional-list li {
+    display: inline-block;
+}
+
+.props-product-name {
+    background-color: red;
+    width: 100px;
+}
+
+.props-product-price {
+    background-color: red;
+    width: 100px;
+}
+
+
+.props-product-id {
+    background-color: red;
+    width: 100px;
 }
 
 .product-point {

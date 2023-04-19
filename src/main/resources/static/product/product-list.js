@@ -120,8 +120,15 @@ const ProductList = () => {
             </div>
 
             <div className={"product-list"}>
+
                 <div className={"list-title-container"}>
-                    <h2>YOUR ACTIVE ORDERS</h2>
+                    <h2>RECENTLY ADDED PRODUCTS</h2>
+                </div>
+
+                <div className={"products-titles"}>
+                    <div className={"product-name-title"}><h4> Name: </h4></div>
+                    <div className={"product-price-title"}><h4> Price: </h4></div>
+                    <div className={"product-id-title"}><h4> Id: </h4></div>
                 </div>
                 <div className={"added-product-container"}>
                     {products.map((product, index) => (
@@ -152,25 +159,31 @@ const ProductItem = (props) => {
     return (
 
         <div key={props.index} className={"product-additional-list"}>
-            <div className={"titles-products"}>
-                <hr/>
-                <div className={"product-name-title"}>Name</div>
-                <div className={"product-name-title"}>Name</div>
-                <div className={"product-name-title"}>Name</div>
+            <div className={"props-added-photo-button-container"}>
+                <img src="../images/slazenger.png" alt="slazenger"/>
             </div>
-            <div>{props.product.name}</div>
+            <div className={"props-product-name"}>{props.product.name}</div>
+            <div className={"props-product-price"}>{props.product.price}</div>
+            <div className={"props-product-id"}>{props.product.id}</div>
             {/*<div>{props.product.description}</div>*/}
-            <div>{props.product.price}</div>
-            <div>{props.product.id}</div>
-            <div className={"refactor-buttons"}>
-                <button className={"delete-button"} onClick={() => handleDeleteTodo(props.index, props.product.id)}><i
-                    className="uil uil-trash-alt"></i>
 
-                </button>
-                <button className={"edit-button"} onClick={() => handleEditList(props.index, props.product.id)}><i
-                    className="uil uil-edit"></i>
-                </button>
+            <div className={"refactor-buttons"}>
+                <div className={"delete-button-container"}>
+                    <button className={"delete-button"} onClick={() => handleDeleteTodo(props.index, props.product.id)}>
+                        <i
+                            className="uil uil-trash-alt"></i>
+                    </button>
+
+                </div>
+                <div className={"edit-button-container"}>
+                    <button className={"edit-button"} onClick={() => handleEditList(props.index, props.product.id)}><i
+                        className="uil uil-edit"></i>
+                    </button>
+                </div>
+
+
             </div>
+
         </div>
     );
 }
