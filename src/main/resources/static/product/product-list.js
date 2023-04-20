@@ -126,6 +126,7 @@ const ProductList = () => {
                 </div>
 
                 <div className={"products-titles"}>
+                    <div className={"product-illustration-title"}><h4> Illustration: </h4></div>
                     <div className={"product-name-title"}><h4> Name: </h4></div>
                     <div className={"product-price-title"}><h4> Price: </h4></div>
                     <div className={"product-id-title"}><h4> Id: </h4></div>
@@ -163,7 +164,7 @@ const ProductItem = (props) => {
                 <img src="../images/slazenger.png" alt="slazenger"/>
             </div>
             <div className={"props-product-name"}>{props.product.name}</div>
-            <div className={"props-product-price"}>{props.product.price}</div>
+            <div className={"props-product-price"}>{props.product.price}<p>₴</p></div>
             <div className={"props-product-id"}>{props.product.id}</div>
             {/*<div>{props.product.description}</div>*/}
 

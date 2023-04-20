@@ -4,9 +4,7 @@ import com.shop.choisi.dto.ProductDto;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
-import java.util.Date;
-import java.util.Iterator;
-import java.util.List;
+  import java.util.List;
 
 @RestController
 @RequestMapping("/products")
