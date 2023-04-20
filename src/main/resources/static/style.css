@@ -74,6 +74,13 @@ header {
     list-style: none;
 }
 
+p {
+    font-weight: 400;
+    position: relative;
+    display: inline-block;
+
+}
+
 .nav-links li {
     display: inline-block;
     padding: 0 20px;
@@ -251,18 +258,12 @@ i {
     height: 1px;
 }
 
-.props-added-photo-button-container{
-    width: 102px;
-    height: 102px;
-    border-radius: 9px;
-    margin-right: 20px;
-    margin-top: 30px;
+
+.delete-button-container {
 
 }
-.delete-button-container{
 
-}
-.edit-button-container{
+.edit-button-container {
 
 }
 
@@ -283,6 +284,7 @@ i {
     height: 50px;
     border-bottom: 2px solid var(--horizontal-line-color);
 
+
 }
 
 .list-title-container {
@@ -294,7 +296,15 @@ i {
     position: relative;
     left: 0;
     bottom: 0;
-    width: 210px;
+    height: 50px;
+    margin-left: 77px;
+}
+
+.product-illustration-title {
+    display: inline-block;
+    position: relative;
+    left: 0;
+    bottom: 0;
     height: 50px;
 }
 
@@ -303,7 +313,15 @@ i {
     display: inline-block;
     position: relative;
     bottom: 0;
-    width: 210px;
+    margin-left: 70px;
+}
+
+.product-id-title {
+    display: inline-block;
+    position: relative;
+    right: 0;
+    bottom: 0;
+    margin-left: 77px;
 }
 
 h2 {
@@ -319,32 +337,48 @@ h4 {
     font-weight: 600;
 }
 
-.product-id-title {
-    display: inline-block;
-    position: relative;
-    right: 0;
-    bottom: 0;
-    width: 50px;
-}
 
 .product-additional-list li {
     display: inline-block;
 }
 
+.props-added-photo-button-container {
+    width: 102px;
+    height: 102px;
+    border-radius: 9px;
+    margin-right: 20px;
+    margin-top: 30px;
+
+}
+
 .props-product-name {
-    background-color: red;
+    text-align: center;
+    font-size: 25px;
+    font-weight: 600;
     width: 100px;
+    inline-size: 100px;
+    overflow-wrap: break-word;
 }
 
 .props-product-price {
-    background-color: red;
+    display: inline-block;
+    position: relative;
+    text-align: center;
+    font-size: 25px;
+    font-weight: 600;
     width: 100px;
+    inline-size: 100px;
+    overflow-wrap: break-word;
 }
 
 
 .props-product-id {
-    background-color: red;
+    text-align: center;
+    font-size: 25px;
+    font-weight: 600;
     width: 100px;
+    inline-size: 100px;
+    overflow-wrap: break-word;
 }
 
 .product-point {
