@@ -1,6 +1,7 @@
 package com.shop.choisi.controller;
 
-import com.shop.choisi.dto.ProductDto;
+
+import com.shop.choisi.service.ProductService;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
@@ -11,21 +12,21 @@ import java.util.ArrayList;
 public class ProductController {
 
 
-    ArrayList<ProductDto> productDtos = new ArrayList<>();
+    ArrayList<ProductService> productServices = new ArrayList<>();
 
     @GetMapping
-    public List<ProductDto> getAll() {
-        return productDtos;
+    public List<ProductService> getAll() {
+        return productServices;
     }
 
     @PostMapping
-    public ProductDto save(@RequestBody ProductDto dto) {
-        productDtos.add(dto);
+    public ProductService save(@RequestBody ProductService dto) {
+        productServices.add(dto);
         return dto;
     }
 
     @DeleteMapping("/{id}")
     public void delete(@PathVariable Long id) {
-        productDtos.removeIf(dto -> dto.getId().equals(id));
     }
+
 }
