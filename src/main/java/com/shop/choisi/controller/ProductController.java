@@ -2,12 +2,10 @@ package com.shop.choisi.controller;
 
 
 import com.shop.choisi.dto.ProductDto;
-import com.shop.choisi.entity.ProductEntity;
 import com.shop.choisi.service.ProductService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @RequiredArgsConstructor
@@ -19,7 +17,7 @@ public class ProductController {
 
 
     @GetMapping
-    public List<ProductEntity> getAll() {
+    public List<ProductDto> getAll() {
         return productService.loadAll();
     }
 
