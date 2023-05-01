@@ -3,6 +3,7 @@ package com.shop.choisi.dto;
 import lombok.*;
 
 import java.math.BigDecimal;
+import java.time.LocalDateTime;
 
 @Getter
 @Setter
@@ -11,7 +12,7 @@ import java.math.BigDecimal;
 public class ProductDto {
 
     private Long id;
-    private Long creationDate;
+    private LocalDateTime creationDate;
     private String name;
     private Long amount;
     private BigDecimal price;
