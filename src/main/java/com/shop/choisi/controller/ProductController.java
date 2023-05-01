@@ -8,13 +8,12 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@RequiredArgsConstructor
 @RestController
+@RequiredArgsConstructor
 @RequestMapping("/products")
 public class ProductController {
 
     private final ProductService productService;
-
 
     @GetMapping
     public List<ProductDto> getAll() {
@@ -23,12 +22,12 @@ public class ProductController {
 
     @PostMapping
     public ProductDto save(@RequestBody ProductDto dto) {
-        productService.save(dto);
-        return dto;
+        return productService.save(dto);
     }
 
     @DeleteMapping("/{id}")
     public void delete(@PathVariable Long id) {
+        productService.delete(id);
     }
 
 }
