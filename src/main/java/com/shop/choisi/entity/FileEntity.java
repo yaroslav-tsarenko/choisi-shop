@@ -7,6 +7,7 @@ import lombok.Setter;
 
 @Getter
 @Setter
+@Entity
 @Table(name = "app_file")
 public class FileEntity {
 

@@ -40,7 +40,6 @@ const ProductList = () => {
         if (inputName === "" || inputDescription === "") {
             window.alert("Input all fields")
         } else {
-            product.id = new Date().getTime();
             product.name = inputName;
             product.description = inputDescription;
             product.price = inputPrice;
@@ -49,8 +48,8 @@ const ProductList = () => {
             setPrice("");
             restApi.post('/products', product)
                 .then(function (response) {
-                    console.log(response);
-                    setProducts([...products, product]);
+                    console.log('SAVED:', response.data);
+                    setProducts([...products, response.data]);
                 })
                 .catch(function (error) {
                     console.log(error);
