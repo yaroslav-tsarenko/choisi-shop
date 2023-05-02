@@ -165,6 +165,7 @@ const ProductItem = (props) => {
             <div className={"props-product-name"}>{props.product.name}</div>
             <div className={"props-product-price"}>{props.product.price}<p>₴</p></div>
             <div className={"props-product-id"}>{props.product.id}</div>
+            <div className={"props-product-id"}>{props.product.id}</div>
             {/*<div>{props.product.description}</div>*/}
 
             <div className={"refactor-buttons"}>
