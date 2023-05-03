@@ -20,9 +20,9 @@ public class ProductMapper {
         target.setId(source.getId());
         target.setCreationDate(nowGMT0());
         target.setName(source.getName());
-        target.setAmount(nowGMT0());
+        target.setAmount(source.getAmount());
         target.setPrice(source.getPrice());
-        target.setDiscount(String.valueOf(nowGMT0()));
+        target.setDiscount(source.getDiscount());
         target.setDescription(source.getDescription());
         return target;
     }
