@@ -12,6 +12,8 @@ const ProductList = () => {
     const [products, setProducts] = React.useState([]);
     const [inputName, setName] = React.useState("");
     const [inputDescription, setDescription] = React.useState("");
+    const [inputAmount, setAmount] = React.useState("");
+    const [inputDiscount, setDiscount] = React.useState("");
     const [inputPrice, setPrice] = React.useState("");
 
     React.useEffect(() => {
@@ -36,6 +38,16 @@ const ProductList = () => {
         setPrice(price);
     };
 
+    const handleProductAmountInput = (event) => {
+        let amount = event.target.value;
+        setAmount(amount);
+    };
+
+    const handleProductDiscountInput = (event) => {
+        let discount = event.target.value;
+        setDiscount(discount);
+    };
+
     const handleAddTodo = () => {
         if (inputName === "" || inputDescription === "") {
             window.alert("Input all fields")
@@ -43,6 +55,8 @@ const ProductList = () => {
             product.name = inputName;
             product.description = inputDescription;
             product.price = inputPrice;
+            product.amount = inputAmount;
+            product.discount = inputDiscount;
             setName("");
             setDescription("");
             setPrice("");
@@ -105,14 +119,33 @@ const ProductList = () => {
                        placeholder={"Description"}
                        onChange={(event) => handleProductDescriptionInput(event)}
                 />
-                <input className={"input-price-product"}
-                       type="number"
-                       value={inputPrice}
-                       placeholder={"Price"}
-                       onChange={(event) => handleProductPriceInput(event)}
+                <div className="refactor-fields-properties">
+                    <input className={"input-price-product"}
+                           type="number"
+                           value={inputPrice}
+                           placeholder={"Price"}
+                           onChange={(event) => handleProductPriceInput(event)}
 
-                />
-                <i className="fas fa-hryvnia"></i>
+                    />
+                    <i className="fas fa-hryvnia"></i>
+                    <input className={"input-amount-product"}
+                           type="number"
+                           value={inputAmount}
+                           placeholder={"Amount"}
+                           onChange={(event) => handleProductAmountInput(event)}
+
+                    />
+                    <i className="uil uil-list-ol-alt"></i>
+                    <input className={"input-discount-product"}
+                           type="number"
+                           value={inputDiscount}
+                           placeholder={"Discount"}
+                           onChange={(event) => handleProductDiscountInput(event)}
+
+                    />
+                    <i className="uil uil-percentage"></i>
+                </div>
+
                 <div className={"button-container"}>
                     <button className={"adding-product-button"} onClick={handleAddTodo}>ADD</button>
                 </div>
@@ -165,14 +198,11 @@ const ProductItem = (props) => {
             <div className={"props-product-name"}>{props.product.name}</div>
             <div className={"props-product-price"}>{props.product.price}<p>₴</p></div>
             <div className={"props-product-id"}>{props.product.id}</div>
-            <div className={"props-product-id"}>{props.product.id}</div>
-            {/*<div>{props.product.description}</div>*/}
 
             <div className={"refactor-buttons"}>
                 <div className={"delete-button-container"}>
                     <button className={"delete-button"} onClick={() => handleDeleteTodo(props.index, props.product.id)}>
-                        <i
-                            className="uil uil-trash-alt"></i>
+                        <i className="uil uil-trash-alt"></i>
                     </button>
 
                 </div>
