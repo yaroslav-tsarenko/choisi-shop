@@ -8,6 +8,7 @@
     --hover-dark-white: #a8a8a8;
     --scrollbar-color: #818181;
     --horizontal-line-color: #797979;
+    --primary-additional-black: #131313;
 }
 
 .root {
@@ -372,8 +373,6 @@ h4 {
 }
 
 
-
-
 .props-product-id {
     text-align: center;
     font-size: 25px;
@@ -449,6 +448,8 @@ li {
     font-size: 40px;
     border-radius: 10px;
     border: 1px solid var(--border-color);
+    padding: 0 5px;
+
 }
 
 .input-product::placeholder {
@@ -464,9 +465,11 @@ li {
     font-size: 40px;
     border-radius: 10px;
     border: 1px solid var(--border-color);
+    padding: 0 5px;
+
 }
 
-.input-amount-product{
+.input-amount-product {
     width: 170px;
     background-color: transparent;
     margin-bottom: 20px;
@@ -474,9 +477,11 @@ li {
     font-size: 40px;
     border-radius: 10px;
     border: 1px solid var(--border-color);
+    padding: 0 5px;
+
 }
 
-.input-discount-product{
+.input-discount-product {
     width: 170px;
     background-color: transparent;
     margin-bottom: 20px;
@@ -484,6 +489,8 @@ li {
     font-size: 40px;
     border-radius: 10px;
     border: 1px solid var(--border-color);
+    padding: 0 5px;
+
 }
 
 .input-price-product::placeholder {
@@ -583,83 +590,232 @@ li {
 
 /* FOOTER */
 
-
-.footer {
-    position: relative;
-    bottom: inherit;
-    border-radius: 15px;
-    background-color: var(--primary-black);
-    padding: 70px 0;
-    display: flex;
-    margin: auto 15px 15px 15px;
+footer {
+    background: var(--primary-black);
+    width: 100%;
+    bottom: 0;
+    left: 0;
 }
 
-.footer-container {
-    max-width: 1170px;
+
+footer .content {
+    max-width: 1250px;
     margin: auto;
+    padding: 30px 40px 40px 40px;
 }
 
-.footer-col {
-    width: 25%;
-    padding: 0 15px;
+footer .content .top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 50px;
 }
 
-.footer-col h4 {
+.content .top .logo-details {
+    color: #fff;
+    font-size: 30px;
+}
+
+.content .top .media-icons {
+    display: flex;
+}
+
+.content .top .media-icons a {
+    color: var(--main-color);
+    height: 40px;
+    width: 40px;
+    margin: 0 8px;
+    text-align: center;
+    line-height: 50px;
+    font-size: 13px;
+    text-decoration: none;
+    transition: all 0.4s ease;
+}
+
+.top .media-icons a:nth-child(1) {
+}
+
+.top .media-icons a:nth-child(1):hover {
+    color: var(--scrollbar-color);
+}
+
+.top .media-icons a:nth-child(2) {
+}
+
+.top .media-icons a:nth-child(2):hover {
+    color: var(--scrollbar-color);
+}
+
+.top .media-icons a:nth-child(3) {
+}
+
+.top .media-icons a:nth-child(3):hover {
+    color: var(--scrollbar-color);
+}
+
+footer .content .link-boxes {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+
+}
+
+footer .content .link-boxes .box {
+    width: calc(100% / 5 - 10px);
+}
+
+.content .link-boxes .box .link-name {
+    color: #fff;
     font-size: 18px;
-    color: var(--primary-white);
-    text-transform: capitalize;
-    margin-bottom: 30px;
+    font-weight: 600;
+    margin-bottom: 10px;
     position: relative;
-    font-weight: 400;
 }
 
-.footer-col h4::before {
+.content .link-boxes .box .link-name:before {
     content: '';
     position: absolute;
-    left: 0;
-    bottom: -10px;
+    bottom: -5px;
+    height: 2px;
+    width: 35px;
+    background: #fff;
+    border-radius: 50px;
 }
 
-.footer-col ul li:not(:last-child) {
-    margin-bottom: 10px;
-}
-
-.footer-col ul li a {
-    cursor: pointer;
-    font-size: 16px;
-    text-transform: capitalize;
-    color: var(--primary-white);
-    text-decoration: none;
-    display: block;
-    transition: all 0.3s ease;
-}
-
-.footer-col ul li a:hover {
-    color: var(--hover-dark-white);
-    padding-left: 8px;
-}
-
-.footer-list {
+.content .link-boxes .box li {
     list-style: none;
 }
 
-.row {
-    display: flex;
-    flex-wrap: wrap;
+.link-boxes .box .link-name::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    height: 2px;
+    width: 35px;
+    background: var(--primary-white);
 }
 
-/* RESPONSIVE FOR FOOTER */
+.content .link-boxes .box li {
+    margin: 6px 0;
+    list-style: none;
+}
 
-@media (max-width: 767px) {
-    .footer-col {
-        width: 50%;
-        margin-bottom: 30px;
+.content .link-boxes .box li a {
+    color: var(--primary-white);
+    font-size: 14px;
+    font-weight: 400;
+    list-style: none;
+    text-decoration: none;
+    opacity: 0.8;
+    transition: all 0.4s ease;
+}
+
+.content .link-boxes .box li a:hover {
+    opacity: 1;
+    text-decoration: underline;
+}
+
+
+.content .link-boxes .input-box {
+   margin-left: 55px;
+
+}
+
+.link-boxes .input-box input{
+    margin-top: 5px;
+    height: 40px;
+    width: calc(100% + 55px);
+    outline: none;
+    border: 2px solid var(--primary-white);
+    border-radius: 10px;
+    padding: 0 15px;
+    font-size: 20px;
+    color: var(--primary-white);
+}
+
+
+.link-boxes .input-box input::placeholder{
+    color: var(--primary-white);
+    font-size: 20px;
+}
+
+
+.link-boxes .subscribe-button{
+    background: var(--main-color);
+    border-radius: 10px;
+    outline: none;
+    border: none;
+    width: 279px;
+    height: 40px;
+    color: var(--primary-black);
+    font-size: 18px;
+    font-weight: 400;
+    margin: 4px 0;
+    opacity: 0.8;
+    transition: all 0.4s ease;
+}
+
+.link-boxes .subscribe-button:hover{
+  opacity: 1;
+}
+
+footer .bottom-details{
+    width: 100%;
+    background: var(--primary-additional-black);
+}
+
+footer .bottom-details .bottom-text{
+   max-width: 1250px;
+    margin: auto;
+    padding: 20px 40px;
+    justify-content: space-between;
+}
+
+.bottom-details .bottom-text span,
+.bottom-details .bottom-text a{
+    font-size: 14px;
+    font-weight: 400;
+    opacity: 0.8;
+    color: var(--primary-white);
+    text-decoration: none;
+}
+
+.bottom-details .bottom-text a:hover{
+    opacity: 1;
+    text-decoration: underline;
+
+}
+
+.bottom-details .bottom-text a{
+    margin-right: 10px;
+}
+
+@media (max-width: 900px){
+    footer .content .link-boxes{
+        flex-wrap: wrap;
+    }
+    .content .link-boxes .input-box{
+        width: 40%;
+        margin-top: 10px;
     }
 }
 
-@media (max-width: 574px) {
-    .footer-col {
-        width: 100%;
+@media (max-width: 700px) {
+    .content .top .logo-details{
+        font-size: 26px;
+    }
+    .content .top .media-icons a{
+        height: 35px;
+        width: 35px;
+        font-size: 14px;
+        line-height: 35px;
+    }
+    footer .content .link-boxes .box{
+        width: calc(100% / 3 - 10px);
+    }
+    footer .content .link-boxes .input-box{
+        width: 60%;
     }
 }
 
