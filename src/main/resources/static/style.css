@@ -88,7 +88,7 @@ p {
 }
 
 .nav-links a {
-    font-size: 38px;
+    font-size: 30px;
     text-decoration: none;
     color: var(--primary-black);
     font-weight: 500;
@@ -599,9 +599,15 @@ footer {
 
 
 footer .content {
+    border-radius: 30px;
     max-width: 1250px;
     margin: auto;
     padding: 30px 40px 40px 40px;
+}
+
+.choisi-logo-black-version{
+    width: 135px;
+    height: 50px;
 }
 
 footer .content .top {
@@ -616,42 +622,13 @@ footer .content .top {
     font-size: 30px;
 }
 
-.content .top .media-icons {
-    display: flex;
+
+
+.p-label {
+    color: var(--primary-white);
 }
 
-.content .top .media-icons a {
-    color: var(--main-color);
-    height: 40px;
-    width: 40px;
-    margin: 0 8px;
-    text-align: center;
-    line-height: 50px;
-    font-size: 13px;
-    text-decoration: none;
-    transition: all 0.4s ease;
-}
 
-.top .media-icons a:nth-child(1) {
-}
-
-.top .media-icons a:nth-child(1):hover {
-    color: var(--scrollbar-color);
-}
-
-.top .media-icons a:nth-child(2) {
-}
-
-.top .media-icons a:nth-child(2):hover {
-    color: var(--scrollbar-color);
-}
-
-.top .media-icons a:nth-child(3) {
-}
-
-.top .media-icons a:nth-child(3):hover {
-    color: var(--scrollbar-color);
-}
 
 footer .content .link-boxes {
     width: 100%;
@@ -718,11 +695,11 @@ footer .content .link-boxes .box {
 
 
 .content .link-boxes .input-box {
-   margin-left: 55px;
+    margin-left: 55px;
 
 }
 
-.link-boxes .input-box input{
+.link-boxes .input-box input {
     margin-top: 5px;
     height: 40px;
     width: calc(100% + 55px);
@@ -735,18 +712,18 @@ footer .content .link-boxes .box {
 }
 
 
-.link-boxes .input-box input::placeholder{
+.link-boxes .inуput-box input::placeholder {
     color: var(--primary-white);
     font-size: 20px;
 }
 
 
-.link-boxes .subscribe-button{
-    background: var(--main-color);
+.link-boxes .subscribe-button {
+    background: var(--primary-white);
     border-radius: 10px;
     outline: none;
     border: none;
-    width: 279px;
+    width: calc(100% + 55px);
     height: 40px;
     color: var(--primary-black);
     font-size: 18px;
@@ -756,24 +733,25 @@ footer .content .link-boxes .box {
     transition: all 0.4s ease;
 }
 
-.link-boxes .subscribe-button:hover{
-  opacity: 1;
+.link-boxes .subscribe-button:hover {
+    opacity: 1;
 }
 
-footer .bottom-details{
+footer .bottom-details {
+    margin-top: 30px;
     width: 100%;
     background: var(--primary-additional-black);
 }
 
-footer .bottom-details .bottom-text{
-   max-width: 1250px;
+footer .bottom-details .bottom-text {
+    max-width: 1250px;
     margin: auto;
     padding: 20px 40px;
     justify-content: space-between;
 }
 
 .bottom-details .bottom-text span,
-.bottom-details .bottom-text a{
+.bottom-details .bottom-text a {
     font-size: 14px;
     font-weight: 400;
     opacity: 0.8;
@@ -781,41 +759,69 @@ footer .bottom-details .bottom-text{
     text-decoration: none;
 }
 
-.bottom-details .bottom-text a:hover{
+.bottom-details .bottom-text a:hover {
     opacity: 1;
     text-decoration: underline;
 
 }
 
-.bottom-details .bottom-text a{
+.bottom-details .bottom-text a {
     margin-right: 10px;
 }
 
-@media (max-width: 900px){
-    footer .content .link-boxes{
+@media (max-width: 900px) {
+    footer .content .link-boxes {
         flex-wrap: wrap;
     }
-    .content .link-boxes .input-box{
+
+    .content .link-boxes .input-box {
         width: 40%;
         margin-top: 10px;
     }
 }
 
 @media (max-width: 700px) {
-    .content .top .logo-details{
+    .content .top .logo-details {
         font-size: 26px;
     }
-    .content .top .media-icons a{
+
+    .content .top .media-icons a {
         height: 35px;
         width: 35px;
         font-size: 14px;
         line-height: 35px;
     }
-    footer .content .link-boxes .box{
+
+    footer .content .link-boxes .box {
         width: calc(100% / 3 - 10px);
     }
-    footer .content .link-boxes .input-box{
+
+    footer .content .link-boxes .input-box {
         width: 60%;
+    }
+
+    .bottom-details .bottom-text span,
+    .bottom-details .bottom-text a {
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 520px) {
+    footer::before {
+        top: 145px;
+    }
+
+    footer .content .top {
+        flex-direction: column;
+    }
+
+    .content .top .media-icons {
+        margin-top: 16px;
+    }
+
+    footer .content .link-boxes .input-box {
+        width: 100%;
+
     }
 }
 
