@@ -54,8 +54,8 @@ public class FileController {
         target.setName(fileEntity.getName());
         target.setCreationDate(String.valueOf(fileEntity.getCreationDate()));
         target.setExtension(fileEntity.getExtension());
-        target.setFileType(fileEntity.getFileType());
-        target.setFileSize(fileEntity.getFileSize());
+        target.setType(fileEntity.getType());
+        target.setSize(fileEntity.getSize());
         target.setUrl(downloadURL);
 
         return target;
@@ -73,7 +73,7 @@ public class FileController {
       FileEntity fileEntity = fileEntityOptional.get();
       return ResponseEntity.ok()
               .header(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=\"" + fileEntity.getName() + "\"")
-              .contentType(MediaType.valueOf(fileEntity.getFileType()))
+              .contentType(MediaType.valueOf(fileEntity.getType()))
               .body(fileEntity.getData());
   }
 }
