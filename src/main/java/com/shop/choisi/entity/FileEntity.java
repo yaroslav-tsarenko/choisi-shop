@@ -18,13 +18,22 @@ public class FileEntity {
     @Column(name = "name")
     private String name;
 
-    @Column(name = "extension")
-    private String extension;
-
     @Column(name = "creation_date")
     private Long creationDate;
 
+    @Column(name = "extension")
+    private String extension;
+
+    @Column(name = "type")
+    private String type;
+
+    @Column(name = "size")
+    private Long size;
+
+    @Column(name = "url")
+    private String url;
+
     @Column(name = "data", columnDefinition = "BYTEA")
-    private String data;
+    private byte[] data;
 
 }
