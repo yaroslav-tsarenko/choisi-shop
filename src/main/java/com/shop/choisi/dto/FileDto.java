@@ -9,7 +9,10 @@ public class FileDto {
 
     private Long id;
     private String name;
-    private String extension;
     private String creationDate;
-    private String data;
+    private String extension;
+    private String type;
+    private Long size;
+    private String url;
+    private Byte[] data;
 }
