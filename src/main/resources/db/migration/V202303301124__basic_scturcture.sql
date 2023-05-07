@@ -76,8 +76,11 @@ CREATE TABLE IF NOT EXISTS app_file
 (
     id            SERIAL8,
     name          varchar(255) NOT NULL,
-    extension     varchar(255) NOT NULL,
     creation_date int8         NOT NULL,
+    extension     varchar(255) NOT NULL,
+    type          varchar(30)  NOT NULL,
+    size          int8         NOT NULL,
+    url           varchar(255) NOT NULL,
     data          bytea        NOT NULL,
     PRIMARY KEY (id)
 );
