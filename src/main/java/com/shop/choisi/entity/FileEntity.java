@@ -13,7 +13,7 @@ public class FileEntity {
 
     @Id
     @Column(name = "id")
-    private Long id;
+    private String id;
 
     @Column(name = "name")
     private String name;
@@ -29,11 +29,5 @@ public class FileEntity {
 
     @Column(name = "size")
     private Long size;
-
-    @Column(name = "url")
-    private String url;
-
-    @Column(name = "data", columnDefinition = "BYTEA")
-    private byte[] data;
 
 }

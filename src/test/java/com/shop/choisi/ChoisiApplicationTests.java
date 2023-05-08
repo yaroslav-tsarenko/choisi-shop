@@ -1,9 +1,15 @@
 package com.shop.choisi;
 
 
-import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.junit.jupiter.api.Test;
 
-@SpringBootApplication
+import java.util.Properties;
+
 class ChoisiApplicationTests {
 
+    @Test
+    public void readProps() {
+        Properties properties = System.getProperties();
+        System.out.printf("");
+    }
 }
