@@ -15,6 +15,7 @@ const ProductList = () => {
     const [inputAmount, setAmount] = React.useState("");
     const [inputDiscount, setDiscount] = React.useState("");
     const [inputPrice, setPrice] = React.useState("");
+    const [inputFile, setFile] = React.useState(null);
 
     React.useEffect(() => {
         restApi.get('/products')
@@ -88,6 +89,16 @@ const ProductList = () => {
         setProducts(newTodos);
     };
 
+    const handleUploadPhoto = (event) => {
+        console.log("change", event.target.files);
+    };
+
+    const handleSubmit = (event) =>{
+
+    }
+
+
+
     const selectCurrency = (event) => {
     };
 
@@ -98,15 +109,37 @@ const ProductList = () => {
 
             <div className={"div-button"}>
                 <h1 className={"product-placement-title"}>PRODUCT PLACEMENT</h1>
-                <button className={"upload-product-photo"}>
-                    <h2 className={"upload-photo-title"}>
-                        <i className="uil uil-plus-circle"></i>
-                        UPLOAD PHOTO
-                    </h2>
-                </button>
+
+                <label
+                    htmlFor="input-file-uploader"
+                    className="upload-product-photo">
+                    <p style={{
+                        alignItems: 'center',
+                        textAlign: 'center',
+                        marginTop: '110px',
+                        marginLeft: '20px',
+                        fontWeight: '600',
+                        fontSize: '30px'
+                    }}>
+                            <i className="uil uil-upload"></i>
+                            UPLOAD FILE
+                    </p>
+                </label>
+
+                <input
+                    className="input-file"
+                    type="file"
+                    id="input-file-uploader"
+                    value={inputFile}
+                    style={{display: 'none'}}
+                    onChange={(event) => handleUploadPhoto(event)}
+                />
+
             </div>
 
             <div className={"refactor-fields"}>
+
+
                 <input className={"input-product"}
                        type="text"
                        value={inputName}
