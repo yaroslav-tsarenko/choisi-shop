@@ -12,9 +12,15 @@ import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExcep
 public class RestExceptionHandler extends ResponseEntityExceptionHandler {
 
     @ExceptionHandler(MaxUploadSizeExceededException.class)
-    public ResponseEntity<String> handleMaxSizeException(MaxUploadSizeExceededException ignoredExc){
+    public ResponseEntity<String> handleMaxSizeException(MaxUploadSizeExceededException ignoredExc) {
 
         return ResponseEntity.status(HttpStatus.BAD_REQUEST)
+                .body("Unable to upload. File size is too large!");
+    }
+
+    @ExceptionHandler(ChoisiNotFoundException.class)
+    public ResponseEntity<String> handleChoisiNotFoundException(ChoisiNotFoundException ignoredExc) {
+        return ResponseEntity.status(HttpStatus.NOT_FOUND)
                 .body("Unable to upload. File size is too large!");
     }
 }
