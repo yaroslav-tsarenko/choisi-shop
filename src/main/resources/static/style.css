@@ -75,12 +75,12 @@ header {
     list-style: none;
 }
 
-p {
+/*p {
     font-weight: 400;
     position: relative;
     display: inline-block;
 
-}
+}*/
 
 .nav-links li {
     display: inline-block;
@@ -452,6 +452,7 @@ li {
 
 }
 
+
 .input-product::placeholder {
     font-size: 25px;
     padding-left: 13px;
@@ -561,7 +562,13 @@ li {
     transition: 0.2s ease-out;
 }
 
+
+.contained-button-file {
+    background: black;
+}
+
 .upload-product-photo {
+    align-items: center;
     margin-bottom: 20px;
     color: var(--primary-black);
     position: relative;
@@ -573,6 +580,16 @@ li {
     border-radius: 20px;
     cursor: pointer;
     transition: 0.2s ease-out;
+    overflow: hidden;
+}
+
+.upload-product-photo input[type="file" i] {
+    cursor: pointer;
+    position: absolute;
+    left: 0;
+    top: 0;
+    transform: scale(3);
+    opacity: 0;
 }
 
 .upload-product-photo:hover {
@@ -586,6 +603,8 @@ li {
     cursor: pointer;
     transition: 0.2s ease-out;
 }
+
+
 
 
 /* FOOTER */
@@ -605,7 +624,7 @@ footer .content {
     padding: 30px 40px 40px 40px;
 }
 
-.choisi-logo-black-version{
+.choisi-logo-black-version {
     width: 135px;
     height: 50px;
 }
@@ -623,11 +642,9 @@ footer .content .top {
 }
 
 
-
 .p-label {
     color: var(--primary-white);
 }
-
 
 
 footer .content .link-boxes {
