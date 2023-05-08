@@ -52,8 +52,8 @@ CREATE TABLE IF NOT EXISTS app_product
     id            SERIAL8,
     creation_date int8         NOT NULL,
     name          varchar(255) NOT NULL,
-    amount        int8       NOT NULL,
-    price         decimal       NOT NULL,
+    amount        int8         NOT NULL,
+    price         decimal      NOT NULL,
     discount      varchar(255) NOT NULL,
     description   varchar(255),
     PRIMARY KEY (id)
@@ -74,7 +74,7 @@ CREATE TABLE IF NOT EXISTS ordered_products
 -- FILE
 CREATE TABLE IF NOT EXISTS app_file
 (
-    id            SERIAL8,
+    id            varchar(255) UNIQUE,
     name          varchar(255) NOT NULL,
     creation_date int8         NOT NULL,
     extension     varchar(255) NOT NULL,
@@ -91,7 +91,7 @@ CREATE TABLE IF NOT EXISTS product_files
 (
     id         SERIAL8,
     product_id int8,
-    file_id    int8,
+    file_id    varchar(255),
     FOREIGN KEY (product_id) REFERENCES app_product (id),
     FOREIGN KEY (file_id) REFERENCES app_file (id),
     PRIMARY KEY (id)
