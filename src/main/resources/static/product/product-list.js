@@ -16,7 +16,7 @@ const ProductList = () => {
     const [inputAmount, setAmount] = React.useState("");
     const [inputDiscount, setDiscount] = React.useState("");
     const [inputPrice, setPrice] = React.useState("");
-    const [inputFile, setFile] = React.useState();
+    const [inputImage, setInputImage] = React.useState("");
 
     React.useEffect(() => {
         restApi.get('/products')
@@ -50,10 +50,7 @@ const ProductList = () => {
         setDiscount(discount);
     };
 
-    const handleUploadPhotoInput = (event) => {
-       console.log(event.target.files[0]);
-       setFile(URL.createObjectURL(event.target.files[0]));
-    };
+
 
     const handleAddTodo = () => {
         if (inputName === "" || inputDescription === "") {
@@ -64,7 +61,6 @@ const ProductList = () => {
             product.price = inputPrice;
             product.amount = inputAmount;
             product.discount = inputDiscount;
-            product.file = inputFile;
             setName("");
             setDescription("");
             setPrice("");
@@ -97,31 +93,54 @@ const ProductList = () => {
         setProducts(newTodos);
     };
 
+    const handleImageChange = (event) =>{
+         setInputImage(event.target.files[0]);
+        console.log(event.target.files[0])
+    }
+
+    const handleSubmitImage = (event) =>{
+        event.preventDefault();
+        const formData = new FormData();
+        formData.append("file", inputImage);
+        fetch("/files/file", {
+            method: "POST",
+            body: formData,
+        })
+            .then(r => r.json())
+            .then((result) => {
+                console.log("Success: ", result.message)
+            })
+            .catch((error) => {
+                console.error("Error: ", error);
+            });
+    }
+
+
     return (
 
         <div className="product-manager">
 
             <div className={"div-button"}>
                 <h1 className={"product-placement-title"}>PRODUCT PLACEMENT</h1>
-                <input
-                    className="input-file"
-                    type="file"
-                    id="input-file-uploader"
-                    value={inputFile}
-                    style={{display: 'none'}}
-                    onChange={handleUploadPhotoInput}
-                />
-                <label
+                <form onSubmit={handleSubmitImage}>
+                    <input
+                        className="input-file"
+                        type="file"
+                        accept="image/*"
+                        id="input-file-uploader"
+                        /*style={{display: 'none'}}*/
+                        onChange={handleImageChange}
+                    />
+                    <button type="submit">Submit</button>
+                </form>
+               {/* <label
                     htmlFor="input-file-uploader"
                     className="upload-product-photo">
                     <p>
-                            <i className="uil uil-upload"></i>
-                            UPLOAD FILE
+                        <i className="uil uil-upload"></i>
+                        UPLOAD FILE
                     </p>
-                </label>
-
-                <img src={inputFile} width="50px" height="50px" alt=""/>
-
+                </label>*/}
             </div>
 
             <div className={"refactor-fields"}>
