@@ -5,7 +5,8 @@ let product = {
     id: null,
     name: null,
     description: null,
-    price: null
+    price: null,
+    files: null
 }
 
 const ProductList = () => {
@@ -15,7 +16,7 @@ const ProductList = () => {
     const [inputAmount, setAmount] = React.useState("");
     const [inputDiscount, setDiscount] = React.useState("");
     const [inputPrice, setPrice] = React.useState("");
-    const [inputFile, setFile] = React.useState(null);
+    const [inputFile, setFile] = React.useState();
 
     React.useEffect(() => {
         restApi.get('/products')
@@ -49,6 +50,11 @@ const ProductList = () => {
         setDiscount(discount);
     };
 
+    const handleUploadPhotoInput = (event) => {
+       console.log(event.target.files[0]);
+       setFile(URL.createObjectURL(event.target.files[0]));
+    };
+
     const handleAddTodo = () => {
         if (inputName === "" || inputDescription === "") {
             window.alert("Input all fields")
@@ -58,6 +64,7 @@ const ProductList = () => {
             product.price = inputPrice;
             product.amount = inputAmount;
             product.discount = inputDiscount;
+            product.file = inputFile;
             setName("");
             setDescription("");
             setPrice("");
@@ -69,6 +76,7 @@ const ProductList = () => {
                 .catch(function (error) {
                     console.log(error);
                 });
+
         }
         console.log(products);
     };
@@ -89,51 +97,30 @@ const ProductList = () => {
         setProducts(newTodos);
     };
 
-    const handleUploadPhoto = (event) => {
-        console.log("change", event.target.files);
-    };
-
-    const handleSubmit = (event) =>{
-
-    }
-
-
-
-    const selectCurrency = (event) => {
-    };
-
-
     return (
 
         <div className="product-manager">
 
             <div className={"div-button"}>
                 <h1 className={"product-placement-title"}>PRODUCT PLACEMENT</h1>
-
-                <label
-                    htmlFor="input-file-uploader"
-                    className="upload-product-photo">
-                    <p style={{
-                        alignItems: 'center',
-                        textAlign: 'center',
-                        marginTop: '110px',
-                        marginLeft: '20px',
-                        fontWeight: '600',
-                        fontSize: '30px'
-                    }}>
-                            <i className="uil uil-upload"></i>
-                            UPLOAD FILE
-                    </p>
-                </label>
-
                 <input
                     className="input-file"
                     type="file"
                     id="input-file-uploader"
                     value={inputFile}
                     style={{display: 'none'}}
-                    onChange={(event) => handleUploadPhoto(event)}
+                    onChange={handleUploadPhotoInput}
                 />
+                <label
+                    htmlFor="input-file-uploader"
+                    className="upload-product-photo">
+                    <p>
+                            <i className="uil uil-upload"></i>
+                            UPLOAD FILE
+                    </p>
+                </label>
+
+                <img src={inputFile} width="50px" height="50px" alt=""/>
 
             </div>
 
@@ -226,7 +213,6 @@ const ProductItem = (props) => {
 
         <div key={props.index} className={"product-additional-list"}>
             <div className={"props-added-photo-button-container"}>
-                <img src="../images/slazenger.png" alt="slazenger"/>
             </div>
             <div className={"props-product-name"}>{props.product.name}</div>
             <div className={"props-product-price"}>{props.product.price}<p>₴</p></div>
