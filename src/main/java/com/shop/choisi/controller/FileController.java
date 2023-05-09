@@ -19,7 +19,7 @@ public class FileController {
 
     private final FileService fileService;
 
-    @PostMapping
+    @PostMapping("/file")
     public ResponseEntity<String> upload(@RequestPart(name = "file") MultipartFile file, HttpServletRequest request) {
 
         try {
