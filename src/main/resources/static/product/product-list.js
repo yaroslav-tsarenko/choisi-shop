@@ -5,7 +5,8 @@ let product = {
     id: null,
     name: null,
     description: null,
-    price: null
+    price: null,
+    files: null
 }
 
 const ProductList = () => {
@@ -15,7 +16,7 @@ const ProductList = () => {
     const [inputAmount, setAmount] = React.useState("");
     const [inputDiscount, setDiscount] = React.useState("");
     const [inputPrice, setPrice] = React.useState("");
-    const [inputFile, setFile] = React.useState(null);
+    const [inputImage, setInputImage] = React.useState("");
 
     React.useEffect(() => {
         restApi.get('/products')
@@ -49,6 +50,8 @@ const ProductList = () => {
         setDiscount(discount);
     };
 
+
+
     const handleAddTodo = () => {
         if (inputName === "" || inputDescription === "") {
             window.alert("Input all fields")
@@ -69,6 +72,7 @@ const ProductList = () => {
                 .catch(function (error) {
                     console.log(error);
                 });
+
         }
         console.log(products);
     };
@@ -89,18 +93,27 @@ const ProductList = () => {
         setProducts(newTodos);
     };
 
-    const handleUploadPhoto = (event) => {
-        console.log("change", event.target.files);
-    };
-
-    const handleSubmit = (event) =>{
-
+    const handleImageChange = (event) =>{
+         setInputImage(event.target.files[0]);
+        console.log(event.target.files[0])
     }
 
-
-
-    const selectCurrency = (event) => {
-    };
+    const handleSubmitImage = (event) =>{
+        event.preventDefault();
+        const formData = new FormData();
+        formData.append("file", inputImage);
+        fetch("/files/file", {
+            method: "POST",
+            body: formData,
+        })
+            .then(r => r.json())
+            .then((result) => {
+                console.log("Success: ", result.message)
+            })
+            .catch((error) => {
+                console.error("Error: ", error);
+            });
+    }
 
 
     return (
@@ -109,32 +122,25 @@ const ProductList = () => {
 
             <div className={"div-button"}>
                 <h1 className={"product-placement-title"}>PRODUCT PLACEMENT</h1>
-
-                <label
+                <form onSubmit={handleSubmitImage}>
+                    <input
+                        className="input-file"
+                        type="file"
+                        accept="image/*"
+                        id="input-file-uploader"
+                        /*style={{display: 'none'}}*/
+                        onChange={handleImageChange}
+                    />
+                    <button type="submit">Submit</button>
+                </form>
+               {/* <label
                     htmlFor="input-file-uploader"
                     className="upload-product-photo">
-                    <p style={{
-                        alignItems: 'center',
-                        textAlign: 'center',
-                        marginTop: '110px',
-                        marginLeft: '20px',
-                        fontWeight: '600',
-                        fontSize: '30px'
-                    }}>
-                            <i className="uil uil-upload"></i>
-                            UPLOAD FILE
+                    <p>
+                        <i className="uil uil-upload"></i>
+                        UPLOAD FILE
                     </p>
-                </label>
-
-                <input
-                    className="input-file"
-                    type="file"
-                    id="input-file-uploader"
-                    value={inputFile}
-                    style={{display: 'none'}}
-                    onChange={(event) => handleUploadPhoto(event)}
-                />
-
+                </label>*/}
             </div>
 
             <div className={"refactor-fields"}>
@@ -226,7 +232,6 @@ const ProductItem = (props) => {
 
         <div key={props.index} className={"product-additional-list"}>
             <div className={"props-added-photo-button-container"}>
-                <img src="../images/slazenger.png" alt="slazenger"/>
             </div>
             <div className={"props-product-name"}>{props.product.name}</div>
             <div className={"props-product-price"}>{props.product.price}<p>₴</p></div>

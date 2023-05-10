@@ -568,7 +568,10 @@ li {
 }
 
 .upload-product-photo {
+    text-align: center;
     align-items: center;
+    font-size: 30px;
+    font-weight: 600;
     margin-bottom: 20px;
     color: var(--primary-black);
     position: relative;
@@ -581,6 +584,11 @@ li {
     cursor: pointer;
     transition: 0.2s ease-out;
     overflow: hidden;
+}
+
+.upload-product-photo p{
+    margin-top: 110px;
+    margin-right: 10px;
 }
 
 .upload-product-photo input[type="file" i] {
