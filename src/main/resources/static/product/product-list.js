@@ -9,6 +9,10 @@ let product = {
     files: null
 }
 
+let files ={
+    file: null
+}
+
 const ProductList = () => {
     const [products, setProducts] = React.useState([]);
     const [inputName, setName] = React.useState("");
@@ -102,16 +106,15 @@ const ProductList = () => {
         event.preventDefault();
         const formData = new FormData();
         formData.append("file", inputImage);
-        fetch("/files/file", {
+        fetch("/files", {
             method: "POST",
             body: formData,
         })
-            .then(r => r.json())
-            .then((result) => {
-                console.log("Success: ", result.message)
+            .then((response) => {
+                console.log('Image uploaded successfully!', response.data);
             })
             .catch((error) => {
-                console.error("Error: ", error);
+                console.error('Error uploading image:', error);
             });
     }
 
@@ -123,24 +126,21 @@ const ProductList = () => {
             <div className={"div-button"}>
                 <h1 className={"product-placement-title"}>PRODUCT PLACEMENT</h1>
                 <form onSubmit={handleSubmitImage}>
+                    <label htmlFor="input-file-uploader" className="upload-product-photo">
+                        <p>
+                            <i className="uil uil-upload"></i>
+                            UPLOAD FILE
+                        </p>
+                    </label>
                     <input
                         className="input-file"
                         type="file"
-                        accept="image/*"
                         id="input-file-uploader"
-                        /*style={{display: 'none'}}*/
+                        style={{display: 'none'}}
                         onChange={handleImageChange}
                     />
                     <button type="submit">Submit</button>
                 </form>
-               {/* <label
-                    htmlFor="input-file-uploader"
-                    className="upload-product-photo">
-                    <p>
-                        <i className="uil uil-upload"></i>
-                        UPLOAD FILE
-                    </p>
-                </label>*/}
             </div>
 
             <div className={"refactor-fields"}>
