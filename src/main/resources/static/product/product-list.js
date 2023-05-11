@@ -1,4 +1,5 @@
 'use strict';
+
 const {createElement: e} = React;
 
 let product = {
@@ -6,12 +7,12 @@ let product = {
     name: null,
     description: null,
     price: null,
-    files: null
 }
 
-let files ={
-    file: null
-}
+
+
+const inputFileImage = document.getElementById("input-file-uploader");
+
 
 const ProductList = () => {
     const [products, setProducts] = React.useState([]);
@@ -55,7 +56,6 @@ const ProductList = () => {
     };
 
 
-
     const handleAddTodo = () => {
         if (inputName === "" || inputDescription === "") {
             window.alert("Input all fields")
@@ -97,17 +97,19 @@ const ProductList = () => {
         setProducts(newTodos);
     };
 
-    const handleImageChange = (event) =>{
-         setInputImage(event.target.files[0]);
+    const handleImageChange = (event) => {
+        setInputImage(event.target.files[0]);
         console.log(event.target.files[0])
     }
 
-    const handleSubmitImage = (event) =>{
+    const handleSubmitImage = (event) => {
         event.preventDefault();
         const formData = new FormData();
         formData.append("file", inputImage);
-        fetch("/files", {
-            method: "POST",
+        restApi.post("/files", {
+            headers: {
+                "Content-Type": "multipart/form-data; boundary=test",
+            },
             body: formData,
         })
             .then((response) => {
@@ -126,20 +128,20 @@ const ProductList = () => {
             <div className={"div-button"}>
                 <h1 className={"product-placement-title"}>PRODUCT PLACEMENT</h1>
                 <form onSubmit={handleSubmitImage}>
-                    <label htmlFor="input-file-uploader" className="upload-product-photo">
-                        <p>
-                            <i className="uil uil-upload"></i>
-                            UPLOAD FILE
-                        </p>
-                    </label>
-                    <input
-                        className="input-file"
-                        type="file"
-                        id="input-file-uploader"
-                        style={{display: 'none'}}
-                        onChange={handleImageChange}
-                    />
-                    <button type="submit">Submit</button>
+                        <label htmlFor="input-file-uploader" className="upload-product-photo">
+                            <p>
+                                <i className="uil uil-upload"></i>
+                                UPLOAD FILE
+                            </p>
+                        </label>
+                        <input
+                            className="input-file"
+                            type="file"
+                            id="input-file-uploader"
+                            style={{display: 'none'}}
+                            onChange={handleImageChange}
+                        />
+                        <button type="submit">Submit</button>
                 </form>
             </div>
 
