@@ -79,6 +79,7 @@ const ProductList = () => {
 
         }
         console.log(products);
+        //
     };
 
     const handleDeleteTodo = (index, id) => {
