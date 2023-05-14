@@ -58,6 +58,7 @@ li {
     color: var(--primary-black);
     text-decoration: none;
 }
+/* HEADER */
 
 header {
     display: flex;
@@ -206,7 +207,16 @@ hr {
         padding: 8px 18px;
     }
 }
+/* BODY */
 
+.main-page-container{
+    width: 100%;
+    height: auto;
+    align-items: center;
+    display: flex;
+    position: relative;
+    margin-top: 100px;
+}
 
 /* PRODUCT PLACEMENT */
 
