@@ -107,17 +107,17 @@ const ProductList = () => {
         event.preventDefault();
         const formData = new FormData();
         formData.append("file", inputImage);
-        restApi.post("/files", {
-            headers: {
-                "Content-Type": "multipart/form-data; boundary=test",
-            },
-            body: formData,
-        })
+        restApi.post("/files", formData,
+            {
+                headers: {
+                    'Content-Type': 'multipart/form-data'
+                }
+            })
             .then((response) => {
-                console.log('Image uploaded successfully!', response.data);
+                console.log("Success: ", response.data)
             })
             .catch((error) => {
-                console.error('Error uploading image:', error);
+                console.error("Error: ", error);
             });
     }
 
