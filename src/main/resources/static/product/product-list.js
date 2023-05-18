@@ -114,7 +114,8 @@ const ProductList = () => {
                 }
             })
             .then((response) => {
-                console.log("Success: ", response.data)
+                let fileId = response.data;
+                console.log("Success: ", fileId)
             })
             .catch((error) => {
                 console.error("Error: ", error);
