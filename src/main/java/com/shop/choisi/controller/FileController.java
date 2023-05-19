@@ -20,12 +20,12 @@ public class FileController {
     private final FileService fileService;
 
     @PostMapping
-    public ResponseEntity<String> upload(@RequestPart(name = "file") MultipartFile file, HttpServletRequest request) {
+    public ResponseEntity<String> upload(@RequestPart(name = "file") MultipartFile file) {
 
         try {
             String save = fileService.save(file);
             return ResponseEntity.status(HttpStatus.OK)
-                    .body(String.format("File uploaded successfully: %s", save));
+                    .body(save);
         } catch (Exception e) {
             e.printStackTrace();
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)

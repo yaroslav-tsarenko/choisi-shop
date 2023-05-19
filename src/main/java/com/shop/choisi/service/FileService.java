@@ -50,7 +50,7 @@ public class FileService {
         fileEntity.setSize(multipartFile.getSize());
 
         FileEntity saved = fileRepository.save(fileEntity);
-        return file.getAbsolutePath();
+        return saved.getId();
     }
 
     public FileDto loadById(String id) {
