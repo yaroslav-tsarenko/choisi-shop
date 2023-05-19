@@ -211,12 +211,11 @@ hr {
 
 .main-page-container{
     width: 100%;
-    height: auto;
-    align-items: center;
     display: flex;
-    position: relative;
-    margin-top: 100px;
+    justify-content: flex-end;
 }
+
+
 
 /*SLIDER*/
 
