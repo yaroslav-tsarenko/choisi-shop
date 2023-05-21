@@ -225,20 +225,36 @@ hr {
 
 /*SLIDER*/
 
-.slider{
-    display: flex;
-    position: relative;
-    background-color: var(--primary-secondary-color);
-    width: 100%;
-    height: 1080px;
-    text-align: left;
-}
-
 .slider-title{
-    font-weight: 600;
+    font-weight: 700;
+    font-size: 80px;
     color: var(--primary-black);
     position: relative;
     text-align: left;
+    width: 1920px;
+    height: 150px;
+    align-items: center;
+}
+
+.slider-title-text{
+    margin-top: 55px;
+    margin-bottom: 20px;
+    margin-left: 135px;
+}
+
+.slider-container{
+    width: 1920px;
+    height: 920px;
+    background-color: red;
+}
+
+.card .image-box{
+    height: 200px;
+}
+
+
+.card .image-box img {
+    height: 100%;
 }
 
 /* PRODUCT PLACEMENT */
