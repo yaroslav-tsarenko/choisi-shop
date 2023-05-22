@@ -9,6 +9,7 @@
     <script src="https://unpkg.com/@mui/material@latest/umd/material-ui.development.js"></script>
 
     <script src="http-client/axios.js"></script>
+    <script src="sliderCarousel.js" defer></script>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -55,26 +56,20 @@
     </div>
 
 
-    <div class="slider-title">
-        <h2 class="slider-title-text">CLOTHING</h2>
-    </div>
 
 
     <div class="slider-container">
-        <div class="slide-container">
-            <div class="card-wrapper">
-                <div class="card">
-                    <div class="image-box">
-                        <img src="./slider-images/photo1.jpg" alt="">
-                    </div>
-                    <div class="card-title">
+        <div class="wrapper">
+            <i id="left" class="fa-solid fa-angle-left"></i>
+            <div class="carousel">
+                <div class="card-container"></div>
+                <div class="card-container"></div>
+                <div class="card-container"></div>
 
-                    </div>
-                </div>
             </div>
+            <i id="right" class="fa-solid fa-angle-right"></i>
         </div>
     </div>
-
 
 
     <br>
