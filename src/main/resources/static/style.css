@@ -225,82 +225,71 @@ hr {
 
 /*SLIDER*/
 
-.slider-container{
-    margin-top: 200px;
-}
 
-.card-container{
-    width: 200px;
-    height: 200px;
-    background-color: red;
-}
-
-.wrapper{
-    display: flex;
-    max-width: 1200px;
+.slider-container {
     position: relative;
 }
-.wrapper i{
-    top: 50%;
-    height: 44px;
-    width: 44px;
-    color: #343F4F;
-    cursor: pointer;
-    font-size: 1.15rem;
-    position: absolute;
+
+.slider {
+    display: flex;
+    transition: transform 0.5s;
+}
+
+.slide {
+    flex: 0 0 100%;
+}
+
+.slide img {
+    width: 100%;
+    height: auto;
+}
+
+.pagination {
     text-align: center;
-    line-height: 44px;
-    background: #fff;
+    margin-top: 10px;
+}
+
+.pagination .dot {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
     border-radius: 50%;
-    transform: translateY(-50%);
-    transition: transform 0.1s linear;
-}
-.wrapper i:active{
-    transform: translateY(-50%) scale(0.9);
-}
-.wrapper i:hover{
-    background: #f2f2f2;
-}
-.wrapper i:first-child{
-    left: -22px;
-}
-.wrapper i:last-child{
-    right: -22px;
-}
-.wrapper .carousel{
-    font-size: 0px;
+    background-color: #ccc;
+    margin: 0 5px;
     cursor: pointer;
-    overflow: hidden;
-    white-space: nowrap;
-    scroll-behavior: smooth;
 }
-.carousel.dragging{
-    cursor: grab;
-    scroll-behavior: auto;
+
+.pagination .dot.active {
+    background-color: #555;
 }
-.carousel.dragging img{
-    pointer-events: none;
+
+.arrows {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
 }
-.carousel img{
-    height: 340px;
-    object-fit: cover;
-    user-select: none;
-    margin-left: 14px;
-    width: calc(100% / 3);
+
+.arrows .prev,
+.arrows .next {
+    width: 30px;
+    height: 30px;
+    background-color: #ccc;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
 }
-.carousel img:first-child{
-    margin-left: 0px;
+
+.arrows .prev {
+    margin-right: 10px;
 }
-@media screen and (max-width: 900px) {
-    .carousel img{
-        width: calc(100% / 2);
-    }
+
+.arrows .next {
+    margin-left: 10px;
 }
-@media screen and (max-width: 550px) {
-    .carousel img{
-        width: 100%;
-    }
-}
+
 
 /* PRODUCT PLACEMENT */
 
