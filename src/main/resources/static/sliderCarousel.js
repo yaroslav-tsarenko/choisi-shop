@@ -1,73 +1,41 @@
-const carousel = document.querySelector(".carousel"),
-    firstImg = carousel.querySelectorAll("img")[0],
-    arrowIcons = document.querySelectorAll(".wrapper i");
+var slides = document.querySelectorAll('.slide');
+var pagination = document.querySelector('.pagination');
+var prevArrow = document.querySelector('.prev');
+var nextArrow = document.querySelector('.next');
+var currentIndex = 0;
 
-let isDragStart = false, isDragging = false, prevPageX, prevScrollLeft, positionDiff;
-
-const showHideIcons = () => {
-    // showing and hiding prev/next icon according to carousel scroll left value
-    let scrollWidth = carousel.scrollWidth - carousel.clientWidth; // getting max scrollable width
-    arrowIcons[0].style.display = carousel.scrollLeft == 0 ? "none" : "block";
-    arrowIcons[1].style.display = carousel.scrollLeft == scrollWidth ? "none" : "block";
-}
-
-arrowIcons.forEach(icon => {
-    icon.addEventListener("click", () => {
-        let firstImgWidth = firstImg.clientWidth + 14; // getting first img width & adding 14 margin value
-        // if clicked icon is left, reduce width value from the carousel scroll left else add to it
-        carousel.scrollLeft += icon.id == "left" ? -firstImgWidth : firstImgWidth;
-        setTimeout(() => showHideIcons(), 60); // calling showHideIcons after 60ms
-    });
-});
-
-const autoSlide = () => {
-    // if there is no image left to scroll then return from here
-    if (carousel.scrollLeft - (carousel.scrollWidth - carousel.clientWidth) > -1 || carousel.scrollLeft <= 0) return;
-
-    positionDiff = Math.abs(positionDiff); // making positionDiff value to positive
-    let firstImgWidth = firstImg.clientWidth + 14;
-    // getting difference value that needs to add or reduce from carousel left to take middle img center
-    let valDifference = firstImgWidth - positionDiff;
-
-    if (carousel.scrollLeft > prevScrollLeft) { // if user is scrolling to the right
-        return carousel.scrollLeft += positionDiff > firstImgWidth / 3 ? valDifference : -positionDiff;
+// Create pagination dots
+for (var i = 0; i < slides.length; i++) {
+    var dot = document.createElement('span');
+    dot.classList.add('dot');
+    if (i === currentIndex) {
+        dot.classList.add('active');
     }
-    // if user is scrolling to the left
-    carousel.scrollLeft -= positionDiff > firstImgWidth / 3 ? valDifference : -positionDiff;
+    pagination.appendChild(dot);
 }
 
-const dragStart = (e) => {
-    // updatating global variables value on mouse down event
-    isDragStart = true;
-    prevPageX = e.pageX || e.touches[0].pageX;
-    prevScrollLeft = carousel.scrollLeft;
+var dots = document.querySelectorAll('.dot');
+
+function goToSlide(index) {
+    slides.forEach(function (slide, i) {
+        slide.style.transform = 'translateX(' + ((i - index) * 100) + '%)';
+    });
+    dots.forEach(function (dot, i) {
+        dot.classList.toggle('active', i === index);
+    });
 }
 
-const dragging = (e) => {
-    // scrolling images/carousel to left according to mouse pointer
-    if (!isDragStart) return;
-    e.preventDefault();
-    isDragging = true;
-    carousel.classList.add("dragging");
-    positionDiff = (e.pageX || e.touches[0].pageX) - prevPageX;
-    carousel.scrollLeft = prevScrollLeft - positionDiff;
-    showHideIcons();
+function goToNextSlide() {
+    currentIndex = (currentIndex + 1) % slides.length;
+    goToSlide(currentIndex);
 }
 
-const dragStop = () => {
-    isDragStart = false;
-    carousel.classList.remove("dragging");
-
-    if (!isDragging) return;
-    isDragging = false;
-    autoSlide();
+function goToPrevSlide() {
+    currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+    goToSlide(currentIndex);
 }
 
-carousel.addEventListener("mousedown", dragStart);
-carousel.addEventListener("touchstart", dragStart);
+nextArrow.addEventListener('click', goToNextSlide);
+prevArrow.addEventListener('click', goToPrevSlide);
 
-document.addEventListener("mousemove", dragging);
-carousel.addEventListener("touchmove", dragging);
-
-document.addEventListener("mouseup", dragStop);
-carousel.addEventListener("touchend", dragStop);
+setInterval(goToNextSlide, 5000);
