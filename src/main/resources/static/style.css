@@ -254,8 +254,11 @@ hr {
     background-color: var(--primary-white);
 }
 .wrapper-bottom-image-container{
+    margin-top: 100px;
+
     background-color: var(--primary-white);
     width: 100%;
+    height: 1111px;
 }
 .main-image-information-block{
     margin-left: 50px;
