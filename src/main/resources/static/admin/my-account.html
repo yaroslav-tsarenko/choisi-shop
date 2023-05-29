@@ -1,113 +1,129 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>My Account</title>
-  <script src="https://unpkg.com/react@17.0.2/umd/react.development.js"></script>
-  <script src="https://unpkg.com/react-dom@17.0.2/umd/react-dom.development.js"></script>
-  <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
-  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-  <script src="https://unpkg.com/@mui/material@latest/umd/material-ui.development.js"></script>
+    <title>My Account</title>
+    <script src="https://unpkg.com/react@17.0.2/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@17.0.2/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://unpkg.com/@mui/material@latest/umd/material-ui.development.js"></script>
 
-  <script src="../http-client/axios.js"></script>
+    <script src="../http-client/axios.js"></script>
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Forum&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css"/>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
-        crossorigin="anonymous" referrerpolicy="no-referrer"/>
-  <link href="../style.css" rel="stylesheet" type="text/css"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Forum&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+          integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+          crossorigin="anonymous" referrerpolicy="no-referrer"/>
+    <link href="../style.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
 <header>
-  <img class="logo" src="../images/logo1.svg" alt="CHOISI">
-  <div class="input-box">
+    <img class="logo" src="../images/logo1.svg" alt="CHOISI">
+    <div class="input-box">
 
-    <label>
-      <input type="text" placeholder="Search..."/>
-    </label>
-    <button class="button"><i class="uil uil-search"></i></button>
-  </div>
-  <nav>
-    <ul class="nav-links">
-      <li><a href="#">LOG IN<i class="uil uil-user"></i></a></li>
-      <li><a href="#">WISHLIST<i class="uil uil-heart"></i></a></li>
-      <li><a href="#">CART<i class="uil uil-shopping-bag"></i></a></li>
-    </ul>
-  </nav>
+        <label>
+            <input type="text" placeholder="Search..."/>
+        </label>
+        <button class="button"><i class="uil uil-search"></i></button>
+    </div>
+    <nav>
+        <ul class="nav-links">
+            <li><a href="#">LOG IN<i class="uil uil-user"></i></a></li>
+            <li><a href="#">WISHLIST<i class="uil uil-heart"></i></a></li>
+            <li><a href="#">CART<i class="uil uil-shopping-bag"></i></a></li>
+        </ul>
+    </nav>
 </header>
 
 <hr class="header-underline">
 
 <main>
-<div class="wrapper-account-details">
-  <div class="account-details">
-    <p class="my-account-title">MY ACCOUNT</p>
-    <p class="my-account-title">NAME</p>
-    <p class="my-account-title">SECOND NAME</p>
-    <p class="my-account-title"></p>
-    <img class="avatar-parameters" src="../images/no-avatar.png" alt="no-image" width="333" height="333" >
-  </div>
-  <div class="account-product-list">
-    
-  </div>
-</div>
+    <nav>
+        <ul class="nav-links-main">
+            <li><a href="#">ACCOUNT SETTINGS</a></li>
+
+        </ul>
+    </nav>
+    <div class="wrapper-account-details">
+
+        <div class="account-details">
+
+            <h3 class="my-account-title">MY ACCOUNT</h3>
+            <img class="avatar-parameters" src="../images/no-avatar.png" alt="no-image" width="333" height="333">
+
+            <div class="user-confidential-information">
+                <p class="user-confidential-information-title">Name</p>
+                <p class="user-confidential-information-title">Last Name</p>
+                <p class="user-confidential-information-title">Phone Number</p>
+                <p class="user-confidential-information-title">Email</p>
+                <p class="user-confidential-information-title">Password</p>
+            </div>
+        </div>
+
+
+        <div class="add-account-address">
+            <p class="user-confidential-information-title">MY ADDRESS</p>
+            <button class="add-address-button">ADD ADDRESS</button>
+        </div>
+    </div>
 </main>
 
 <footer>
-  <div class="content">
-    <div class="top">
-      <div class="logo-details">
-        <!-- <span class="logo_name">CHOISI</span>-->
-        <img class="choisi-logo-black-version" src="../images/choisi-logo-black.jpg" alt="CHOISI">
-      </div>
+    <div class="content">
+        <div class="top">
+            <div class="logo-details">
+                <!-- <span class="logo_name">CHOISI</span>-->
+                <img class="choisi-logo-black-version" src="../images/choisi-logo-black.jpg" alt="CHOISI">
+            </div>
+
+        </div>
+        <div class="link-boxes">
+            <ul class="box">
+                <li class="link-name">INFORMATION</li>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Contact us</a></li>
+                <li><a href="#">About us</a></li>
+                <li><a href="#">Get started</a></li>
+            </ul>
+            <ul class="box">
+                <li class="link-name">SHOP</li>
+                <li><a href="#">App design</a></li>
+                <li><a href="#">Web design</a></li>
+                <li><a href="#">Logo design</a></li>
+                <li><a href="#">Banner design</a></li>
+            </ul>
+            <ul class="box">
+                <li class="link-name">QUICK LINKS</li>
+                <li><a href="#">Profile</a></li>
+                <li><a href="#">My account</a></li>
+                <li><a href="#">Preferences</a></li>
+                <li><a href="#">Purchase</a></li>
+            </ul>
+            <ul class="box input-box">
+                <li class="link-name">STAY IN TOUCH</li>
+                <p class="p-label">Sign up for exclusive offers, original stories, events and more.</p>
+                <li><input type="text" placeholder="Enter your email"></li>
+                <li>
+                    <button class="subscribe-button">Subscribe</button>
+                </li>
+            </ul>
+
+        </div>
 
     </div>
-    <div class="link-boxes">
-      <ul class="box">
-        <li class="link-name">INFORMATION</li>
-        <li><a href="#">Home</a></li>
-        <li><a href="#">Contact us</a></li>
-        <li><a href="#">About us</a></li>
-        <li><a href="#">Get started</a></li>
-      </ul>
-      <ul class="box">
-        <li class="link-name">SHOP</li>
-        <li><a href="#">App design</a></li>
-        <li><a href="#">Web design</a></li>
-        <li><a href="#">Logo design</a></li>
-        <li><a href="#">Banner design</a></li>
-      </ul>
-      <ul class="box">
-        <li class="link-name">QUICK LINKS</li>
-        <li><a href="#">Profile</a></li>
-        <li><a href="#">My account</a></li>
-        <li><a href="#">Preferences</a></li>
-        <li><a href="#">Purchase</a></li>
-      </ul>
-      <ul class="box input-box">
-        <li class="link-name">STAY IN TOUCH</li>
-        <p class="p-label">Sign up for exclusive offers, original stories, events and more.</p>
-        <li><input type="text" placeholder="Enter your email"></li>
-        <li>
-          <button class="subscribe-button">Subscribe</button>
-        </li>
-      </ul>
 
-    </div>
-
-  </div>
-
-  <div class="bottom-details">
-    <div class="bottom-text">
-      <span class="copyright_text">Copyright &#169; 2023 <a href="#">CHOSI</a></span>
-      <span class="policy-terms">
+    <div class="bottom-details">
+        <div class="bottom-text">
+            <span class="copyright_text">Copyright &#169; 2023 <a href="#">CHOSI</a></span>
+            <span class="policy-terms">
             <a href="#">Privacy policy</a>
             <a href="#">Terms & condition</a>
         </span>
+        </div>
     </div>
-  </div>
 </footer>
 
 
