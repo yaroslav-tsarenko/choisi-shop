@@ -368,6 +368,13 @@ hr {
     cursor: pointer;
 }
 
+div.gfg {
+    background-color: green;
+    width: 500px;
+    height: 110px;
+    overflow: auto;
+}
+
 
 /*SLIDER*/
 
