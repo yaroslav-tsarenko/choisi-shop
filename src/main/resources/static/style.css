@@ -13,6 +13,7 @@
     --title-head-color: #C1C1C1;
     --title-footer-color: #E16565;
     --title-footer-hover-color: #ff8585;
+    --title-p2-color: #626262;
 }
 
 .root {
@@ -342,7 +343,6 @@ hr {
 }
 
 
-
 .user-confidential-information {
     position: relative;
     margin: 250px 0 0 0;
@@ -351,10 +351,12 @@ hr {
 
 .user-confidential-information-title {
     margin: 0 0 15px 30px;
+    width: 400px;
+    font-size: 20px;
 }
 
 
-.add-address-button{
+.add-user-address-button {
     margin: 1px 0 10px 10px;
     width: 270px;
     height: 70px;
@@ -368,13 +370,207 @@ hr {
     cursor: pointer;
 }
 
-div.gfg {
-    background-color: green;
-    width: 500px;
-    height: 110px;
+.add-user-address-button:hover {
+    background-color: var(--black-light);
+    transition: 0.2s ease-out;
+    cursor: pointer;
+}
+
+
+.title-for-recently-added-product {
+    text-align: center;
+    font-weight: 400;
+    margin: 0 0 30px 0;
+    font-size: 50px;
+}
+
+.recently-added-product-to-account {
+    background-color: rgba(0, 128, 0, 0);
+    width: 800px;
+    height: 500px;
     overflow: auto;
 }
 
+.user-added-product-container {
+    width: 400;
+    height: 300;
+    margin: 10px 10px 10px 10px;
+    text-align: center;
+    display: flex;
+
+}
+
+.user-added-product-image {
+    width: 150px;
+    height: 150px;
+    margin: 0;
+}
+
+.user-added-product-image-box {
+    width: 150px;
+    height: 150px;
+    border-radius: 15px;
+}
+
+.user-added-product-main-title {
+    width: 200px;
+    height: 150px;
+    background-color: rgba(0, 0, 0, 0);
+    margin: 0;
+}
+
+.user-added-product-price {
+    width: 150px;
+    height: 150px;
+    background-color: rgba(199, 84, 0, 0);
+}
+
+.user-added-product-id {
+    width: 150px;
+    height: 150px;
+    background-color: rgba(159, 210, 30, 0);
+}
+
+.title-p1 {
+    text-align: center;
+    margin-top: 50px;
+    font-size: 30px;
+}
+
+.title-p2 {
+    font-size: 30;
+    font-weight: 600;
+    color: var(--title-p2-color);
+    margin-right: 25px;
+    margin-top: 10px;
+}
+
+
+.recently-added-product-to-account::-webkit-scrollbar {
+    cursor: pointer;
+    margin-right: 30px;
+    width: 5px;
+}
+
+.recently-added-product-to-account::-webkit-scrollbar-track {
+    cursor: pointer;
+    border-radius: 20px;
+    background-color: var(--scrollbar-color);
+}
+
+.recently-added-product-to-account::-webkit-scrollbar-thumb {
+    border-radius: 30px;
+    cursor: pointer;
+    background-color: var(--primary-black);
+    outline: 1px solid slategrey;
+}
+
+.user-products-titles {
+    align-items: center;
+    width: 100%;
+    max-width: 780px;
+    height: 70px;
+    margin-bottom: 20px;
+    border-bottom: 2px solid var(--horizontal-line-color);
+}
+
+.user-product-illustration-title {
+    display: inline-block;
+    position: relative;
+    left: 0;
+    bottom: 0;
+    height: 50px;
+}
+
+.user-product-name-title {
+    display: inline-block;
+    position: relative;
+    left: 0;
+    bottom: 0;
+    height: 50px;
+    margin-left: 55px;
+}
+
+.user-product-price-title {
+    display: inline-block;
+    position: relative;
+    bottom: 0;
+    margin-left: 134px;
+}
+
+.user-product-id-title {
+    display: inline-block;
+    position: relative;
+    right: 0;
+    bottom: 0;
+    margin-left: 147px;
+}
+
+.h4-user-product-illustration {
+    color: var(--horizontal-line-color);
+    margin-top: 30px;
+    right: 0;
+    bottom: 0;
+    position: relative;
+    font-weight: 400;
+    font-size: 30px;
+}
+
+.h4-user-product-name {
+    color: var(--horizontal-line-color);
+    margin-top: 30px;
+    right: 0;
+    bottom: 0;
+    position: relative;
+    font-weight: 400;
+    font-size: 30px;
+}
+
+.h4-user-product-price {
+    color: var(--horizontal-line-color);
+    margin-top: 30px;
+    right: 0;
+    bottom: 0;
+    position: relative;
+    font-weight: 400;
+    font-size: 30px;
+}
+
+.h4-user-product-id {
+    color: var(--horizontal-line-color);
+    margin-top: 30px;
+    right: 0;
+    bottom: 0;
+    position: relative;
+    font-weight: 400;
+    font-size: 30px;
+}
+
+.place-order-information-container{
+    margin-top: 20px;
+    max-width: 780px;
+    justify-items: center;
+    display: flex;
+}
+
+.add-order-address-button {
+    width: 270px;
+    height: 70px;
+    background-color: var(--primary-black);
+    font-size: 30px;
+    font-weight: 500;
+    border-radius: 15px;
+    color: var(--primary-white);
+    border-style: none;
+    transition: 0.2s ease-out;
+    cursor: pointer;
+}
+
+.add-order-address-button:hover {
+    background-color: var(--black-light);
+    transition: 0.2s ease-out;
+    cursor: pointer;
+}
 
 /*SLIDER*/
 
