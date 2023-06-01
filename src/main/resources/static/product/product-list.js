@@ -80,6 +80,7 @@ const ProductList = () => {
         }
         console.log(products);
         //
+        handleSubmitImage()
     };
 
     const handleDeleteTodo = (index, id) => {
