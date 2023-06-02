@@ -260,7 +260,7 @@ hr {
 
     background-color: var(--primary-white);
     width: 100%;
-    height: 1111px;
+    height: 800px;
 }
 
 .main-image-information-block {
@@ -445,6 +445,14 @@ hr {
     margin-top: 10px;
 }
 
+/* ReactJS styles*/
+
+.added-product-container {
+    width: 500px;
+    height: 800px;
+    overflow: auto;
+}
+
 
 .recently-added-product-to-account::-webkit-scrollbar {
     cursor: pointer;
@@ -546,7 +554,7 @@ hr {
     font-size: 30px;
 }
 
-.place-order-information-container{
+.place-order-information-container {
     margin-top: 20px;
     max-width: 780px;
     justify-items: center;

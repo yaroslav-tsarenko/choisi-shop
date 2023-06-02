@@ -3,12 +3,8 @@
 const {createElement: e} = React;
 
 let product = {
-    id: null,
-    name: null,
-    description: null,
-    price: null,
+    id: null, name: null, description: null, price: null,
 }
-
 
 
 const inputFileImage = document.getElementById("input-file-uploader");
@@ -56,7 +52,7 @@ const ProductList = () => {
     };
 
 
-    const handleAddTodo = () => {
+    const handleAddProduct = () => {
         if (inputName === "" || inputDescription === "") {
             window.alert("Input all fields")
         } else {
@@ -79,11 +75,9 @@ const ProductList = () => {
 
         }
         console.log(products);
-        //
-        handleSubmitImage()
     };
 
-    const handleDeleteTodo = (index, id) => {
+    const handleDeleteProduct = (index, id) => {
         restApi.delete('/products/' + id);
         console.log("delete action")
 
@@ -108,12 +102,11 @@ const ProductList = () => {
         event.preventDefault();
         const formData = new FormData();
         formData.append("file", inputImage);
-        restApi.post("/files", formData,
-            {
-                headers: {
-                    'Content-Type': 'multipart/form-data'
-                }
-            })
+        restApi.post("/files", formData, {
+            headers: {
+                'Content-Type': 'multipart/form-data'
+            }
+        })
             .then((response) => {
                 let fileId = response.data;
                 console.log("Success: ", fileId)
@@ -123,28 +116,33 @@ const ProductList = () => {
             });
     }
 
+    const handleSubmitImageAndAddProduct = () => {
+        handleSubmitImage();
+        handleAddProduct();
+    }
+
 
     return (
 
         <div className="product-manager">
-
             <div className={"div-button"}>
                 <h1 className={"product-placement-title"}>PRODUCT PLACEMENT</h1>
                 <form onSubmit={handleSubmitImage}>
-                        <label htmlFor="input-file-uploader" className="upload-product-photo">
-                            <p>
-                                <i className="uil uil-upload"></i>
-                                UPLOAD FILE
-                            </p>
-                        </label>
-                        <input
-                            className="input-file"
-                            type="file"
-                            id="input-file-uploader"
-                            style={{display: 'none'}}
-                            onChange={handleImageChange}
-                        />
-                        <button type="submit">Submit</button>
+                    <label htmlFor="input-file-uploader" className="upload-product-photo">
+                        <p>
+                            <i className="uil uil-upload"></i>
+                            UPLOAD FILE
+                        </p>
+                    </label>
+                    <input
+                        className="input-file"
+                        type="file"
+                        id="input-file-uploader"
+                        style={{display: 'none'}}
+                        onChange={handleImageChange}
+                    />
+                    <button type="submit">Submit</button>
+
                 </form>
             </div>
 
@@ -191,7 +189,11 @@ const ProductList = () => {
                 </div>
 
                 <div className={"button-container"}>
-                    <button className={"adding-product-button"} onClick={handleAddTodo}>ADD</button>
+                    <button
+                        className={"adding-product-button"}
+                        onClick={handleAddProduct}
+                    >ADD
+                    </button>
                 </div>
             </div>
 
@@ -208,14 +210,12 @@ const ProductList = () => {
                     <div className={"product-id-title"}><h4> Id: </h4></div>
                 </div>
                 <div className={"added-product-container"}>
-                    {products.map((product, index) => (
-                        <ProductItem
-                            key={index}
-                            index={index}
-                            product={product}
-                            deleteFunc={handleDeleteTodo}
-                        />
-                    ))}
+                    {products.map((product, index) => (<ProductItem
+                        key={index}
+                        index={index}
+                        product={product}
+                        deleteFunc={handleDeleteProduct}
+                    />))}
                 </div>
             </div>
         </div>
@@ -258,8 +258,7 @@ const ProductItem = (props) => {
 
             </div>
 
-        </div>
-    );
+        </div>);
 }
 
 const domContainer = document.querySelector('#root');
