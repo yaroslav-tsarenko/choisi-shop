@@ -27,14 +27,20 @@ public class ProductMapper {
         return target;
     }
 
-    public List<ProductEntity> mapDtosToEntities(List<ProductDto> source){
+    public List<ProductEntity> mapDtosToEntities(List<ProductDto> source) {
         return source.stream()
                 .map(this::mapDtoToEntity)
                 .collect(Collectors.toList());
     }
 
     public ProductDto mapEntityToDto(ProductEntity source) {
+
         ProductDto target = new ProductDto();
+
+        if (source == null) {
+            return target;
+        }
+
         target.setId(source.getId());
         target.setCreationDate(DateTimeUtil.utcToLocalDateTimeGMT3(source.getCreationDate()));
         target.setName(source.getName());
@@ -45,7 +51,7 @@ public class ProductMapper {
         return target;
     }
 
-    public List<ProductDto> mapEntitiesToDtos(List<ProductEntity> source){
+    public List<ProductDto> mapEntitiesToDtos(List<ProductEntity> source) {
         return source.stream()
                 .map(this::mapEntityToDto)
                 .collect(Collectors.toList());
