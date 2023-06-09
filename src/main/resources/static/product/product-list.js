@@ -120,10 +120,7 @@ const ProductList = () => {
         handleSubmitImage();
         handleAddProduct();
     }
-
-
     return (
-
         <div className="product-manager">
             <div className={"div-button"}>
                 <h1 className={"product-placement-title"}>PRODUCT PLACEMENT</h1>
@@ -145,10 +142,7 @@ const ProductList = () => {
 
                 </form>
             </div>
-
             <div className={"refactor-fields"}>
-
-
                 <input className={"input-product"}
                        type="text"
                        value={inputName}
@@ -187,7 +181,6 @@ const ProductList = () => {
                     />
                     <i className="uil uil-percentage"></i>
                 </div>
-
                 <div className={"button-container"}>
                     <button
                         className={"adding-product-button"}
@@ -196,9 +189,7 @@ const ProductList = () => {
                     </button>
                 </div>
             </div>
-
             <div className={"product-list"}>
-
                 <div className={"list-title-container"}>
                     <h2>RECENTLY ADDED PRODUCTS</h2>
                 </div>
@@ -219,7 +210,6 @@ const ProductList = () => {
                 </div>
             </div>
         </div>
-
     );
 };
 
