@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CHOISI - Admin Dashboard</title>
+    <link rel="icon" href="./images/favicon-logo-white.png" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Forum&family=Ubuntu:wght@400;500;700&display=swap"
+          rel="stylesheet">
+    <link href="dashboard-styles.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<!-- SIDEBAR -->
+<div class="container">
+    <div class="navigation">
+        <ul>
+            <li>
+                <a href="#">
+                    <span class="icon"><ion-icon name="storefront-outline"></ion-icon></span>
+                    <span class="title">CHOISI</span>
+                    <span></span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <span class="icon"><ion-icon name="stats-chart-outline"></ion-icon></span>
+                    <span class="title">Dashboard</span>
+                    <span></span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <span class="icon"><ion-icon name="people-outline"></ion-icon></span>
+                    <span class="title">Customers</span>
+                    <span></span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <span class="icon"><ion-icon name="chatbubble-ellipses-outline"></ion-icon></span>
+                    <span class="title">Message</span>
+                    <span></span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <span class="icon"><ion-icon name="help-circle-outline"></ion-icon></span>
+                    <span class="title">Help</span>
+                    <span></span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <span class="icon"><ion-icon name="settings-outline"></ion-icon></span>
+                    <span class="title">Settings</span>
+                    <span></span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <span class="icon"><ion-icon name="lock-closed-outline"></ion-icon></span>
+                    <span class="title">Password</span>
+                    <span></span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <span class="icon"><ion-icon name="exit-outline"></ion-icon></span>
+                    <span class="title">Sign Out</span>
+                    <span></span>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <!-- MAIN -->
+    <div class="main">
+        <div class="topbar">
+            <div class="toggle">
+                <ion-icon name="menu-outline"></ion-icon>
+            </div>
+            <!-- SEARCH -->
+            <div class="search">
+                <label>
+                    <input type="text" placeholder="Type to search...">
+                    <ion-icon name="search-outline"></ion-icon>
+                </label>
+            </div>
+            <!-- USER-IMG-->
+            <div class="user">
+                <img src="./images/user.jpg" alt="">
+            </div>
+
+        </div>
+
+        <!-- CARDS -->
+        <div class="cardBox">
+            <div class="card">
+                <div>
+                    <div class="numbers">1,504</div>
+                    <div class="cardName">Daily Views</div>
+                </div>
+                <div class="iconBx">
+                    <ion-icon name="eye-outline"></ion-icon>
+                </div>
+            </div>
+            <div class="card">
+                <div>
+                    <div class="numbers">80</div>
+                    <div class="cardName">Sales</div>
+                </div>
+                <div class="iconBx">
+                    <ion-icon name="cart-outline"></ion-icon>
+                </div>
+            </div>
+            <div class="card">
+                <div>
+                    <div class="numbers">284</div>
+                    <div class="cardName">Comments</div>
+                </div>
+                <div class="iconBx">
+                    <ion-icon name="chatbox-ellipses-outline"></ion-icon>
+                </div>
+            </div>
+            <div class="card">
+                <div>
+                    <div class="numbers">$7,842</div>
+                    <div class="cardName">Earning</div>
+                </div>
+                <div class="iconBx">
+                    <ion-icon name="cash-outline"></ion-icon>
+                </div>
+            </div>
+        </div>
+        <!-- ORDER DETAILS LIST -->
+        <div class="details">
+            <div class="recentOrders">
+                <div class="cardHeader">
+                    <h2>Recent Orders</h2>
+                    <a href="#" class="btn">View All</a>
+                </div>
+                <table>
+                    <thead>
+                    <tr>
+                        <td>Name</td>
+                        <td>Price</td>
+                        <td>Payment</td>
+                        <td>Status</td>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>Star Refrigerator</td>
+                        <td>1200$</td>
+                        <td>1200$</td>
+                        <td>Paid</td>
+                        <td><span class="status delivered">Delivered</span></td>
+                    </tr>
+                    <tr>
+                        <td>Star Refrigerator</td>
+                        <td>1200$</td>
+                        <td>1200$</td>
+                        <td>Paid</td>
+                        <td><span class="status pending">Pending</span></td>
+                    </tr>
+                    <tr>
+                        <td>Star Refrigerator</td>
+                        <td>1200$</td>
+                        <td>1200$</td>
+                        <td>Paid</td>
+                        <td><span class="status inprogress">Progressing...</span></td>
+                    </tr>
+                    <tr>
+                        <td>Star Refrigerator</td>
+                        <td>1200$</td>
+                        <td>1200$</td>
+                        <td>Paid</td>
+                        <td><span class="status delivered">Delivered</span></td>
+                    </tr>
+                    <tr>
+                        <td>Star Refrigerator</td>
+                        <td>1200$</td>
+                        <td>1200$</td>
+                        <td>Paid</td>
+                        <td><span class="status delivered">Delivered</span></td>
+                    </tr>
+                    <tr>
+                        <td>Star Refrigerator</td>
+                        <td>1200$</td>
+                        <td>1200$</td>
+                        <td>Paid</td>
+                        <td><span class="status inprogress">Progressing...</span></td>
+                    </tr>
+                    <tr>
+                        <td>Star Refrigerator</td>
+                        <td>1200$</td>
+                        <td>1200$</td>
+                        <td>Paid</td>
+                        <td><span class="status delivered">Delivered</span></td>
+                    </tr>
+                    <tr>
+                        <td>Star Refrigerator</td>
+                        <td>1200$</td>
+                        <td>1200$</td>
+                        <td>Paid</td>
+                        <td><span class="status pending">Pending</span></td>
+                    </tr>
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+<script>
+
+    //MENU-TOGGLE
+    let toggle = document.querySelector('.toggle');
+    let navigation = document.querySelector('.navigation');
+    let main = document.querySelector('.main');
+
+    toggle.onclick = function () {
+        navigation.classList.toggle('active')
+        main.classList.toggle('active')
+    }
+
+    //ADD HOVER FOR SELECTED ITEM
+    let list = document.querySelectorAll('.navigation li');
+
+    function activeLink() {
+        list.forEach((item) =>
+            item.classList.remove('hovered'));
+        this.classList.add('hovered');
+    }
+
+    list.forEach((item) =>
+        item.addEventListener('mouseover', activeLink));
+</script>
+</body>
+</html>
