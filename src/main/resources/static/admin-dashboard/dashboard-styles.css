@@ -1,13 +1,13 @@
-
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Ubuntu', sans-serif;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
 }
 
 :root {
-    --blue: #287bff;
+    --primary-black: #1C1C1C;
     --white: #fff;
     --grey: #f5f5f5;
     --black1: #222;
@@ -28,8 +28,8 @@ body {
     position: fixed;
     width: 300px;
     height: 100%;
-    background: var(--blue);
-    border-left: 10px solid var(--blue);
+    background: var(--primary-black);
+    border-left: 10px solid var(--primary-black);
     transition: 0.5s;
     overflow: hidden;
 }
@@ -74,7 +74,7 @@ body {
 
 .navigation ul li:hover a,
 .navigation ul li.hovered a {
-    color: var(--blue);
+    color: var(--primary-black);
 }
 
 
@@ -236,7 +236,7 @@ body {
     position: relative;
     font-weight: 500;
     font-size: 2.5em;
-    color: var(--blue);
+    color: var(--primary-black);
 }
 
 .cardBox .card .cardName {
@@ -251,7 +251,7 @@ body {
 }
 
 .cardBox .card:hover {
-    background: var(--blue);
+    background: var(--primary-black);
 }
 
 .cardBox .card:hover .numbers,
@@ -288,34 +288,216 @@ body {
 
 .cardHeader h2 {
     font-weight: 600;
-    color: var(--blue);
+    color: var(--primary-black);
 }
 
 .btn {
     position: relative;
     padding: 5px 10px;
-    background: var(--blue);
+    background: var(--primary-black);
     text-decoration: none;
     color: var(--white);
     border-radius: 6px;
 }
 
-.details .table {
+.details table {
     width: 100%;
     border-collapse: collapse;
     margin-top: 10px;
+    border: none;
 }
 
-.details .table thead td {
-    font-weight: 600;
+.details table thead td {
+    font-weight: 700;
 }
 
-.details .recentOrders table thead tr {
+.details .recentOrders table tr {
     color: var(--black1);
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
 
+.details .recentOrders table tr:last-child {
+    border-bottom: none;
+}
+
 .details .recentOrders table tbody tr:hover {
-    background: var(--blue);
+    background: var(--primary-black);
     color: var(--white)
+}
+
+.details .recentOrders table tr td {
+    padding: 10px;
+}
+
+.details .recentOrders table tr td:last-child {
+    text-align: end;
+}
+
+.details .recentOrders table tr td:nth-child(2) {
+    text-align: end;
+}
+
+.details .recentOrders table tr td:nth-child(3) {
+    text-align: center;
+}
+
+.status.delivered {
+    padding: 2px 4px;
+    background: #039d00;
+    color: var(--white);
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.status.pending {
+    padding: 2px 4px;
+    background: #beb814;
+    color: var(--white);
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.status.return {
+    padding: 2px 4px;
+    background: #696969;
+    color: var(--white);
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.status.inprogress {
+    padding: 2px 4px;
+    background: #0985a1;
+    color: var(--white);
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.recentCustomers {
+    position: relative;
+    display: grid;
+    min-height: 500px;
+    padding: 20px;
+    box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
+    border-radius: 20px;
+}
+
+.recentCustomers table tr:hover {
+    background: var(--primary-black);
+    color: var(--white);
+}
+
+.recentCustomers .imgBx {
+    position: relative;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.recentCustomers .imgBx img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.recentCustomers table tr td {
+    padding: 12 10px;
+}
+
+.recentCustomers table tr td h4 {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.2em;
+}
+
+.recentCustomers table tr td h4 span {
+    font-size: 14px;
+    color: var(--black2);
+}
+
+.recentCustomers table tr:hover td h4 span {
+    color: var(--white);
+}
+
+/* RESPONSIVE */
+@media (max-width: 991px) {
+    .navigation {
+        left: -300px;
+    }
+
+    .navigation.active {
+        width: 300px;
+        left: 0;
+    }
+
+    .main {
+        width: 100%;
+        left: 0;
+    }
+
+    .main.active {
+        left: 300px;
+    }
+
+    .cardBox {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .details {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .recentOrders {
+        overflow-x: auto;
+    }
+
+    .status.inprogress {
+        white-space: nowrap;
+    }
+}
+
+@media (max-width: 480px) {
+    .cardBox {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .cardHeader h2 {
+        font-size: 20px;
+    }
+
+    .user {
+        min-width: 40px;
+    }
+
+    .navigation {
+        width: 100%;
+        left: -100%;
+        z-index: 1000;
+    }
+
+    .navigation.active {
+        width: 100%;
+        left: 0;
+    }
+
+    .toggle {
+        z-index: 10001;
+    }
+
+    .main.active .toggle {
+        position: fixed;
+        right: 0;
+        left: initial;
+        color: var(--white);
+    }
 }
