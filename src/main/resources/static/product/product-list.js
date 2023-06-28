@@ -75,6 +75,7 @@ const ProductList = () => {
 
         }
         console.log(products);
+        handleSubmitImage();
     };
 
     const handleDeleteProduct = (index, id) => {
@@ -120,6 +121,7 @@ const ProductList = () => {
         handleSubmitImage();
         handleAddProduct();
     }
+
     return (
         <div className="product-manager">
             <div className={"div-button"}>
