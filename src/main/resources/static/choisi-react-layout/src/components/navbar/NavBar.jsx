@@ -2,6 +2,7 @@ import { useRef } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
 import "./NavBar.css";
 import Logo from "../logo/Logo";
+import SearchBar from "../searchbar/SearchBar";
 
 function Navbar() {
     const navRef = useRef();
@@ -26,6 +27,8 @@ function Navbar() {
                     <FaTimes />
                 </button>
             </nav>
+            <SearchBar/>
+
             <button
                 className="nav-btn"
                 onClick={showNavbar}>
