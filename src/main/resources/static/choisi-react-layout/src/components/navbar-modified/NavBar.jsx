@@ -4,6 +4,7 @@ import Logo from "../logo/Logo";
 import NavLinks from "./NavLinks";
 
 const NavBar = () => {
+
     const [isNavOpen, setIsNavOpen] = useState(false);
 
     const handleNavToggle = () => {
@@ -12,6 +13,7 @@ const NavBar = () => {
 
     return (
         <nav className={`navbar ${isNavOpen ? 'active' : ''}`}>
+
             <div className="navbar-logo">
                 <Logo />
             </div>
@@ -31,6 +33,7 @@ const NavBar = () => {
             <div className="navbar-mobile" onClick={handleNavToggle}>
                 <i className={`fas ${isNavOpen ? 'fa-times' : 'fa-bars'}`}></i>
             </div>
+
         </nav>
     );
 };
