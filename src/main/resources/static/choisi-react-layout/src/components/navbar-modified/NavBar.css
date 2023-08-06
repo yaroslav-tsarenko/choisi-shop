@@ -1,0 +1,101 @@
+/* NavBar.css */
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css');
+
+/* Your global styles and resets */
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #ffffff;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.navbar-logo {
+    flex: 1;
+}
+
+.navbar-center {
+    flex: 2;
+    display: flex;
+    justify-content: center;
+}
+
+.navbar-center a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 600;
+    margin: 0 15px;
+    transition: color 0.3s ease;
+}
+
+.navbar-center a:hover {
+    color: #f5587b;
+}
+
+.navbar-icons {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.navbar-icons i {
+    margin-left: 15px;
+    cursor: pointer;
+    color: #333;
+    font-size: 18px;
+    transition: color 0.3s ease;
+}
+
+.navbar-icons i:hover {
+    color: #f5587b;
+}
+
+.navbar-mobile {
+    display: none;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 769px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .navbar-mobile {
+        display: block;
+    }
+
+    .navbar-logo {
+        margin-bottom: 20px;
+    }
+
+    .navbar-center {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        max-height: 0;
+        overflow: hidden;
+        transition: all 0.3s ease;
+    }
+
+    .navbar.active .navbar-center {
+        max-height: 200px; /* Adjust the max height as needed */
+    }
+
+    .navbar-center a {
+        margin-bottom: 15px;
+        opacity: 0;
+        transform: translateY(-10px);
+        transition: all 0.3s ease;
+    }
+
+    .navbar.active .navbar-center a {
+        opacity: 1;
+        transform: translateY(0);
+        transition-delay: 0.1s; /* Delay each link animation for a smoother effect */
+    }
+}
