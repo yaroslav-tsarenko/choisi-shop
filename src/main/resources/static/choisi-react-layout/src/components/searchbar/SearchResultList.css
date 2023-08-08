@@ -1,0 +1,14 @@
+.results-list {
+    position: absolute;
+    width: 310px;
+    top: 40px;
+    right: 1070px;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 0 8px #ddd;
+    border-radius: 10px;
+    margin-top: 1rem;
+    max-height: 300px;
+    overflow-y: auto;
+}
