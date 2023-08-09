@@ -1,17 +1,23 @@
-import React, { useRef } from "react";
+import React, {useRef} from "react";
 import emailjs from "@emailjs/browser";
-import styled from "styled-components";
-
+import './ContactForm.css'
 
 const ContactForm = () => {
+
     const form = useRef();
+    const phoneNumber = '+380972796855';
+
+    const handleCall = () => {
+        window.location.href = `tel:${phoneNumber}`;
+    }
+
 
     const sendEmail = (e) => {
         e.preventDefault();
 
         emailjs
             .sendForm(
-                "replace with service id",
+                "service_choisi_shop",
                 "template_t1v2ymv",
                 form.current,
                 "MpbzkwqGRIih_UOWv"
@@ -20,6 +26,7 @@ const ContactForm = () => {
                 (result) => {
                     console.log(result.text);
                     console.log("message sent");
+                    window.alert("message sent")
                 },
                 (error) => {
                     console.log(error.text);
@@ -28,71 +35,28 @@ const ContactForm = () => {
     };
 
     return (
-        <StyledContactForm>
-            <form ref={form} onSubmit={sendEmail}>
-                <label>Name</label>
-                <input type="text" name="user_name" />
-                <label>Email</label>
-                <input type="email" name="user_email" />
-                <label>Message</label>
-                <textarea name="message" />
-                <input type="submit" value="Send" />
-            </form>
-        </StyledContactForm>
-    );
+
+        <div className="body">
+            <div className="container">
+                <div className="contact-box">
+                    <div className="left"></div>
+                    <div className="right">
+                        <form ref={form} onSubmit={sendEmail}>
+                            <h2>You can send email</h2>
+                            <input type="text" name="user_name" id="name" className="field" placeholder="Your Name"/>
+                            <input type="email" name="user_email" id="email" className="field"
+                                   placeholder="Your Email"/>
+                            <textarea name="message" id="message" className="field" placeholder="Message"/>
+                            <button className="btn" id="btn" type="submit" value="Send">Send</button>
+                            <h3 className="offer-title">Or you can</h3>
+                        </form>
+                        <button onClick={handleCall} className="btn-call">Make a Call</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    )
+        ;
 };
 
 export default ContactForm;
-
-const StyledContactForm = styled.div`
-  width: 400px;
-
-  form {
-    display: flex;
-    align-items: flex-start;
-    flex-direction: column;
-    width: 100%;
-    font-size: 16px;
-
-    input {
-      width: 100%;
-      height: 35px;
-      padding: 7px;
-      outline: none;
-      border-radius: 5px;
-      border: 1px solid rgb(220, 220, 220);
-
-      &:focus {
-        border: 2px solid rgba(0, 206, 158, 1);
-      }
-    }
-
-    textarea {
-      max-width: 100%;
-      min-width: 100%;
-      width: 100%;
-      max-height: 100px;
-      min-height: 100px;
-      padding: 7px;
-      outline: none;
-      border-radius: 5px;
-      border: 1px solid rgb(220, 220, 220);
-
-      &:focus {
-        border: 2px solid rgba(0, 206, 158, 1);
-      }
-    }
-
-    label {
-      margin-top: 1rem;
-    }
-
-    input[type="submit"] {
-      margin-top: 2rem;
-      cursor: pointer;
-      background: rgb(249, 105, 14);
-      color: white;
-      border: none;
-    }
-  }
-`;
