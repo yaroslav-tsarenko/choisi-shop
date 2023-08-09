@@ -1,32 +1,41 @@
-import React, { useState } from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faSearch, faTimes } from "@fortawesome/free-solid-svg-icons";
-import "./SearchBar.css"; // Create a separate CSS file for styling
+import { useState } from "react";
+import { FaSearch } from "react-icons/fa";
 
-const SearchBar = () => {
-    const [isSearchOpen, setIsSearchOpen] = useState(false);
+import "./SearchBar.css";
 
-    const toggleSearch = () => {
-        setIsSearchOpen(!isSearchOpen);
+export const SearchBar = ({ setResults }) => {
+
+    const [input, setInput] = useState("");
+
+    const fetchData = (value) => {
+        fetch("https://jsonplaceholder.typicode.com/users")
+            .then((response) => response.json())
+            .then((json) => {
+                const results = json.filter((user) => {
+                    return (
+                        value &&
+                        user &&
+                        user.name &&
+                        user.name.toLowerCase().includes(value)
+                    );
+                });
+                setResults(results);
+            });
     };
 
-    const handleClearSearch = () => {
-        setIsSearchOpen(false);
+    const handleChange = (value) => {
+        setInput(value);
+        fetchData(value);
     };
 
     return (
-        <div className={`search-bar ${isSearchOpen ? "open" : ""}`}>
-            <div className="search-icon-container" onClick={toggleSearch}>
-                <FontAwesomeIcon icon={faSearch} className="search-icon" />
-            </div>
-            <div className="search-input-container">
-                <input type="text" placeholder="Search..." />
-                <div className="close-icon-container" onClick={handleClearSearch}>
-                    <FontAwesomeIcon icon={faTimes} className="close-icon" />
-                </div>
-            </div>
+        <div className="input-wrapper">
+            <FaSearch className="search-icon" />
+            <input
+                placeholder="Type to search..."
+                value={input}
+                onChange={(e) => handleChange(e.target.value)}
+            />
         </div>
     );
 };
-
-export default SearchBar;
