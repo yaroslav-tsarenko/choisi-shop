@@ -1,14 +1,16 @@
-import logo from './logo.svg';
 import './App.css';
 import NavBar from "./components/navbar/NavBar";
+import ContactForm from "./components/contact-form/ContactForm";
+
 
 function App() {
-  return (
-   <>
-     <NavBar></NavBar>
-       {/*//*/}
-   </>
-  );
+
+    return (
+        <div className="App">
+            {/*<NavBar/>*/}
+            <ContactForm/>
+        </div>
+    );
 }
 
 export default App;
