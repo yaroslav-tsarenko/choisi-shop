@@ -1,0 +1,82 @@
+*{
+    font-family: "Montserrat" sans-serif;
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+    background-color: #f9f9f9;
+    border-radius: 20px;
+    border: 1px solid;
+    overflow: hidden;
+    max-width: 40px;
+    transition: max-width 0.3s ease;
+}
+
+.search-bar.open {
+    max-width: 300px;
+}
+
+.search-icon-container,
+.close-icon-container {
+    cursor: pointer;
+    padding: 10px;
+}
+
+.search-input-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.search-input-container input {
+    width: 100%;
+    padding: 8px;
+    border: none;
+    background-color: transparent;
+    color: #333;
+    font-size: 14px;
+    outline: none;
+}
+
+.close-icon {
+    color: #999;
+    font-size: 16px;
+}
+
+/* Add custom animations */
+@keyframes fade-in {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slide-in {
+    from {
+        transform: translateX(100%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+@keyframes slide-out {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(100%);
+    }
+}
+
+/* Animation for the input container */
+.search-bar.open .search-input-container {
+    animation: fade-in 0.3s ease, slide-in 0.3s ease;
+}
+
+.search-bar .search-input-container:not(.open) {
+    animation: slide-out 0.3s ease;
+}
